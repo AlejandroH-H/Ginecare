@@ -3,18 +3,18 @@ include("./conexion.php");
 
 
 if(!empty($_POST["ingresar"])){
-    if (empty($_POST["nombre"]) or empty($_POST["dni"])){
+    if (empty($_POST["nombre"]) or empty($_POST["dni"]) or empty($_POST['password'])){
         echo '<div>¡Los campos están vacios!</div>';
 
     }else{
         session_start();
-        $nombre = trim(filter_var($_POST['nombre'],FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+        $usuario = trim(filter_var($_POST['nombre'],FILTER_SANITIZE_FULL_SPECIAL_CHARS));
         $dni = trim(filter_var($_POST['dni'],FILTER_SANITIZE_FULL_SPECIAL_CHARS));
         $password = trim(filter_var($_POST['password'],FILTER_SANITIZE_FULL_SPECIAL_CHARS));
 
 
 
-        if(!$nombre || !$dni || !$password){
+        if(!$usuario || !$dni || !$password){
             die("Datos inválidos.");
         }
 
@@ -45,8 +45,8 @@ if(!empty($_POST["ingresar"])){
         
         */
         
-        $stmt = $pdo->prepare("SELECT * FROM empleados WHERE nombre = :nombre AND dni = :dni ");
-        $stmt->bindParam(':nombre',  $nombre, PDO::PARAM_STR);
+        $stmt = $pdo->prepare("SELECT * FROM empleados WHERE usuario = :usuario AND dni = :dni ");
+        $stmt->bindParam(':usuario',  $usuario, PDO::PARAM_STR);
         $stmt->bindParam(':dni',  $dni, PDO::PARAM_STR);
         $stmt->execute();
         $user = $stmt->fetch();
@@ -55,14 +55,14 @@ if(!empty($_POST["ingresar"])){
 
         if($user && password_verify($password, $user['password'])){
             if($dni == 18970657){
-                $_SESSION['username']= $nombre;
+                $_SESSION['username']= $user['nombre'];
                 $_SESSION['sid']= 1;
                 header("location:inicio_admin.php");
             } else{
-                $_SESSION['username']= $nombre;
+                $_SESSION['username']= $user['nombre'];
                 $_SESSION['dni']= $dni;
-                $stmt = $pdo->prepare("SELECT id FROM empleados WHERE nombre = :nombre AND dni = :dni ");
-        $stmt->bindParam(':nombre',  $nombre, PDO::PARAM_STR);
+                $stmt = $pdo->prepare("SELECT id FROM empleados WHERE usuario = :usuario AND dni = :dni ");
+        $stmt->bindParam(':usuario',  $usuario, PDO::PARAM_STR);
         $stmt->bindParam(':dni',  $dni, PDO::PARAM_STR);
          $stmt->execute();
         $id = $stmt->fetchColumn();

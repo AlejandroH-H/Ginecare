@@ -1,15 +1,12 @@
 <?php
 include("./conexion.php");
-
+include("session_l.php");
 
 
 if(!empty($_POST["registro"])){
-    if(empty($_POST['nombre'])  or empty($_POST['dni'])
-    or empty($_POST['fecha']) or empty($_POST['hora'])) {
+    if(empty($_POST['fecha']) or empty($_POST['hora'])) {
         echo '<div class="alert alert-warning">¡Por favor, complete los campos requeridos!</div>';
 } else{
-    $nombre = trim($_POST['nombre']);
-    $dni = trim($_POST['dni']);
     $fecha = trim($_POST['fecha']);
     $hora = trim($_POST['hora']);
     $motivo = trim($_POST['motivo']);
@@ -36,7 +33,7 @@ if(!empty($_POST["registro"])){
         
     } else{
         $stmt = $pdo->prepare('SELECT * FROM empleados WHERE nombre = :nombre AND dni = :dni');
-    $stmt->bindParam(':nombre', $nombre);
+    $stmt->bindParam(':nombre', $usuario);
     $stmt->bindParam(':dni', $dni);
     $stmt->execute();
     $result = $stmt->rowCount();

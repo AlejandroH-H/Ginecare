@@ -40,7 +40,7 @@ aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler
     </li>
 
     <li class="nav-item active">
-      <a class="nav-link" href="concillok.php">Buscar cita</a>
+      <a class="nav-link" href="concillook.php">Buscar cita</a>
     </li>
 
 </div>

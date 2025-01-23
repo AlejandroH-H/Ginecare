@@ -21,7 +21,7 @@
             ?>
             <div class="field">
                <div class="fas fa-envelope"></div>
-               <input type="text" placeholder="Nombre" name="nombre">
+               <input type="text" placeholder="Usuario" name="nombre">
             </div>
             <div class="field">
                <div class="fas fa-lock"></div>
