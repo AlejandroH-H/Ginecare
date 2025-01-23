@@ -24,6 +24,11 @@
                     <input type="text" name="apellido">
                 </div>
 
+                <div class="username">
+                    <label for="">Nombre de Usuario</label>
+                    <input type="text" name="usuario">
+                </div>
+
                 <div class="dni"  >
                     <label for="">DNI</label>
                     <input type="text" name="dni" required minlength="7"  maxlength="8">

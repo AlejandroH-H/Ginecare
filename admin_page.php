@@ -103,7 +103,7 @@ aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler
             <?php 
                 include("conexion.php");
                 
-                $stmt = $pdo->prepare("SELECT * FROM empleados ");
+                $stmt = $pdo->prepare("SELECT * FROM empleados WHERE id !=1");
                 $stmt->execute();
                 $resultado = $stmt->fetchAll();
                 /*$consulta = "SELECT * FROM empleados WHERE id!=1";

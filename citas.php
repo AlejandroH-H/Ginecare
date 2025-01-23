@@ -9,11 +9,7 @@
 
 </head>
 <body>
-<?php
-include("controller/session_l.php");
 
-
-?>
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -58,18 +54,7 @@ aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler
             <?php
             include("controller/citas_control.php"); 
             ?>
-            <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" required>
-            </div>
             
-            <br>
-            <div class="mb-3">
-            <label for="dni" class="form-label">DNI</label>
-            <input type="text" class="form-control" id="dni" name="dni" required>
-            </div>
-            
-            <br>
             <div class="mb-3">
             <label for="fecha" class="form-label">Fecha</label>
             <input type="date" class="form-control" id="fecha" name="fecha" required>
