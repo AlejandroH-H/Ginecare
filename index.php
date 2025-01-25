@@ -3,48 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="asset/css/Registrostyle.css">
+    <?php require "./views/partials/linksFooter.php"; ?>
     <title>Ingreso</title>
 </head>
 <body>
-    <div class="container">
+    <div class="padre">
+    <div class="containerr">
         <form action="" method="post" class="formulario">
-            <h2 class="titulo">REGISTRO</h2>
+            <h2 class="titulo">registrate</h2>
             <?php
             include("controller/registro.php");
             ?>
-            <div class="padre">
-                <div class="nombre">
+                <div class="input-field">
+                    <input type="text" name="nombre" required>
                     <label for="">Nombres</label>
-                    <input type="text" name="nombre">
                 </div>
 
-                <div class="apellido">
+                <div class="input-field">
+                    <input type="text" name="apellido" required>
                     <label for="">Apellidos</label>
-                    <input type="text" name="apellido">
                 </div>
 
-                <div class="username">
-                    <label for="">Nombre de Usuario</label>
-                    <input type="text" name="usuario">
-                </div>
-
-                <div class="dni"  >
-                    <label for="">DNI</label>
+                <div class="input-field"  >
                     <input type="text" name="dni" required minlength="7"  maxlength="8">
+                    <label for="">DNI</label>
                 </div>
 
-                <div class="password"  >
-                    <label for="">Contraseña</label>
+                <div class="input-field"  >
                     <input type="text" name="password" required minlength="6"  maxlength="20">
+                    <label for="">Contraseña</label>
                 </div>
-
-                <div class="cuenta">
                     <input type="submit" class="botton" value="Registrar" name="registro">
-                    <a href="login.php">Ya tiene una cuenta?</a>
+                <div class="inicioDeSesion">
+                    <p>Ya tiene una cuenta <a href="login.php">inicia sesion!</a></p>
                 </div>
-            </div>
         </form> 
     </div>
+</div>
+    <footer>
+    <?php require "./views/partials/footer.php";?>
+    </footer>
 </body>
 </html>
