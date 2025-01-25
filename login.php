@@ -4,40 +4,44 @@
    <head>
       <meta charset="utf-8">
       <title>Login</title>
-      <link rel="stylesheet" href="lstyle.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <link rel="stylesheet" href="./asset/css/InicioSesionStyle.css">
+      <?php require "./views/partials/linksFooter.php"; ?>
    </head>
    <body>
-      <div class="login-form">
-         <div class="text">
-            LOGIN
-         </div>
+      <div class="containerr">
+         <div class="login-form">
          <?php
             include("mover_citas.php");
             ?>
          <form method="post">
+            <h2>inicio de sesion</h2>
             <?php
             include("controller/login_control.php");
             ?>
             <div class="field">
-               <div class="fas fa-envelope"></div>
-               <input type="text" placeholder="Usuario" name="nombre">
+               <input type="text" name="nombre" required>
+               <label>Nombre</label>
             </div>
             <div class="field">
-               <div class="fas fa-lock"></div>
-               <input type="text" placeholder="DNI" name="dni" required minlength="7" maxlength="8">
+               <input type="text" name="dni" required minlength="7" maxlength="8">
+               <label>DNI</label>
             </div>
-
             <div class="field">
-               <div class="fas fa-lock"></div>
-               <input type="text" placeholder="Contraseña" name="password">
+               <input type="text" name="password" required>
+               <label>Contraseña</label>
             </div>
             <Input class="login" name="ingresar" type="submit" value="LOGIN">
             <div class="link">
-               Not a member?
-               <a href="index.php">Signup now</a>
+               <p>no eres parte? <a href="index.php"> registrate ahora</a></p>
             </div>
          </form>
       </div>
+      </div>
+      
+      <footer>
+      <?php require "./views/partials/footer.php";?>
+      </footer>
+
+   
    </body>
 </html>

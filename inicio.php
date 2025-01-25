@@ -48,6 +48,8 @@ aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler
       <a class="nav-link" href="user_historial.php">Revisar historial medico  </a>
     </li>
 
+
+
     <li class="nav-item">
     <a class="nav-link" href="uchat.php" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i>Doctor Chat <?php if($conta4>0){echo $conta4 . ' Mensajes nuevos';} ?></a>
     </li>

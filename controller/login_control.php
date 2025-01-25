@@ -70,7 +70,7 @@ if(!empty($_POST["ingresar"])){
                 header("location:inicio.php");
             }
         } else{
-            echo '<div>¡Datos incorrectos!</div>';
+            echo '<p class="mensaje">¡Datos incorrectos!</p>';
         }
 
         

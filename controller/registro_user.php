@@ -26,12 +26,12 @@ if(!empty($_POST["btnregistrar"])){
             if($result > 0){
                 echo '<div class="bad">¡Error, DNI ya existente!</div>';
             }else{
-                $stmt = $pdo->prepare("INSERT INTO empleados (nombre, apellido, dni, hashe) 
-                VALUES (:nombre, :apellido, :dni, :hashe)");
+                $stmt = $pdo->prepare("INSERT INTO empleados (nombre, apellido, dni, password) 
+                VALUES (:nombre, :apellido, :dni, :hash)");
                 $stmt->bindParam(':nombre',  $nombre, PDO::PARAM_STR);
                 $stmt->bindParam(':apellido',  $apellido, PDO::PARAM_STR);
                 $stmt->bindParam(':dni',  $dni, PDO::PARAM_STR);
-                $stmt->bindParam(':hashe', $hashe);
+                $stmt->bindParam(':hash', $hashe);
         
                 if($stmt->execute()){
                     echo '<div class="alert alert-success">¡Usuario registrado correctamente!</div>';
