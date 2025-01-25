@@ -76,8 +76,13 @@ aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler
   </div>
 
   <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Nombre de Usuario</label>
+    <input type="text" class="form-control" name="usuario" minlength="5" maxlength="20">
+  </div>
+
+  <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Contraseña</label>
-    <input type="number" class="form-control" name="password">
+    <input type="text" class="form-control" name="password">
   </div>
   <a href='controller/salir.php'>Salir</a>
 </form>

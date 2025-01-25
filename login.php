@@ -20,7 +20,7 @@
             ?>
             <div class="field">
                <input type="text" name="nombre" required>
-               <label>Nombre</label>
+               <label>Nombre de usuario</label>
             </div>
             <div class="field">
                <input type="text" name="dni" required minlength="7" maxlength="8">

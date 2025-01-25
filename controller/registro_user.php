@@ -2,17 +2,18 @@
 
 if(!empty($_POST["btnregistrar"])){
     if(empty($_POST["nombre"]) or empty($_POST["apellido"])  or empty($_POST["dni"])
-    or empty($_POST["password"]) ) {
+    or empty($_POST["usuario"]) or empty($_POST["password"]))  {
         echo '<div class="alert alert-warning">¡Por favor, complete todos los campos!</div>';
 } else{
     $nombre = trim($_POST['nombre']);
     $apellido = trim($_POST['apellido']);
     $dni = trim($_POST['dni']);
+    $usuario = trim($_POST['usuario']);
     $password = trim($_POST['password']);
 
     $hashe = password_hash($password, PASSWORD_DEFAULT);
 
-    if(!$nombre || !$apellido || !$dni || !$password   ){
+    if(!$nombre || !$apellido || !$dni || !$password || !$usuario  ){
         die ('<div class="alert alert-danger">¡Datos invalidos...!</div>');
     }
 
@@ -26,10 +27,11 @@ if(!empty($_POST["btnregistrar"])){
             if($result > 0){
                 echo '<div class="bad">¡Error, DNI ya existente!</div>';
             }else{
-                $stmt = $pdo->prepare("INSERT INTO empleados (nombre, apellido, dni, password) 
+                $stmt = $pdo->prepare("INSERT INTO empleados (nombre, apellido, usuario, dni, password) 
                 VALUES (:nombre, :apellido, :dni, :hash)");
                 $stmt->bindParam(':nombre',  $nombre, PDO::PARAM_STR);
                 $stmt->bindParam(':apellido',  $apellido, PDO::PARAM_STR);
+                $stmt->bindParam(':usuario',  $usuario, PDO::PARAM_STR);
                 $stmt->bindParam(':dni',  $dni, PDO::PARAM_STR);
                 $stmt->bindParam(':hash', $hashe);
         
