@@ -1,5 +1,5 @@
 <?php
-include('conexion.php');
+include('../conexion.php');
 
 $fechaActual = date('Y-m-d');
 
@@ -23,8 +23,5 @@ foreach ($citasPasadas as $cita){
     $stmtDelete = $pdo->prepare('DELETE FROM citas WHERE id = :id');
     $stmtDelete->bindParam(':id', $cita['id']);
     $stmtDelete->execute();
-
-
 }
-
 ?>

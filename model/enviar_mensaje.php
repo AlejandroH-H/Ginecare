@@ -1,6 +1,6 @@
 <?php
-include('conexion.php');
-include('controller/session_a.php');
+include('../conexion.php');
+include('../controller/session_a.php');
 //include('controller/session_l.php');
 
 

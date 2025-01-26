@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,41 +9,33 @@
     <script src="https://kit.fontawesome.com/ca9fa9751b.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
-<?php
-include("conexion.php");
-include("controller/session_l.php");
+    <?php require("model/userCitasConsulta.php"); ?>
+    <?php include("controller/session_l.php"); ?>
 
-$stmt = $pdo->prepare('SELECT e.nombre, e.apellido, e.dni, DATE(c.fecha) as fecha, TIME(c.fecha) as hora, c.motivo, c.estado
-FROM citas c JOIN empleados e on (c.empleado_id=e.id) WHERE e.dni = :dni AND e.nombre LIKE :usuario');
-$stmt->bindParam('dni', $dni);
-$stmt->bindParam('usuario', $usuario);
-$stmt->execute();
-$resultado= $stmt->fetchAll();
-?>
-
-<div class="col-4 p-4" id="datos" >
+    <div class="col-4 p-4" id="datos">
 
         <table class="table">
             <thead>
                 <tr>
-                <th scope="col" class="bg-info">NOMBRE</th>
-                <th scope="col" class="bg-info">APELLIDO</th>
-                <th scope="col" class="bg-info">DNI</th>
-                <th scope="col" class="bg-info">FECHA</th>
-                <th scope="col" class="bg-info">HORA</th>
-                <th scope="col" class="bg-info">MOTIVO</th>
-                <th scope="col" class="bg-info">ESTADO</th>
-                <th scope="col" class="bg-info"></th>
+                    <th scope="col" class="bg-info">NOMBRE</th>
+                    <th scope="col" class="bg-info">APELLIDO</th>
+                    <th scope="col" class="bg-info">DNI</th>
+                    <th scope="col" class="bg-info">FECHA</th>
+                    <th scope="col" class="bg-info">HORA</th>
+                    <th scope="col" class="bg-info">MOTIVO</th>
+                    <th scope="col" class="bg-info">ESTADO</th>
+                    <th scope="col" class="bg-info"></th>
                 </tr>
             </thead>
             <tbody>
 
-            <?php 
-                
+                <?php
 
-                foreach($resultado as $datos):
-                    ?>
+
+                foreach ($resultado as $datos):
+                ?>
                     <tr>
                         <td><?php echo $datos['nombre'] ?></td>
                         <td><?php echo $datos['apellido'] ?></td>
@@ -51,24 +44,25 @@ $resultado= $stmt->fetchAll();
                         <td><?php echo $datos['hora'] ?></td>
                         <td><?php echo $datos['motivo'] ?></td>
                         <td><?php echo $datos['estado'] ?></td>
-                        
+
                     </tr>
-                    <?php
+                <?php
                 endforeach;
-                
-                
-                
+
+
+
                 /*$consulta = "SELECT * FROM empleados WHERE id!=1";
                 $resultado = mysqli_query($conn, $consulta);*/
-                
-                    
-                
+
+
+
                 ?>
-            
-    
+
+
             </tbody>
         </table>
     </div>
 
 </body>
+
 </html>

@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <!-- Created By CodingNepal -->
-<html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>Login</title>
-      <link rel="stylesheet" href="./asset/css/InicioSesionStyle.css">
-      <?php require "./views/partials/linksFooter.php"; ?>
-   </head>
-   <body>
-      <div class="containerr">
-         <div class="login-form">
+<html lang="es" dir="ltr">
+
+<head>
+   <meta charset="utf-8">
+   <title>Inicio de Sesión</title>
+   <link rel="stylesheet" href="./asset/css/InicioSesionStyle.css">
+   <?php require "./views/partials/linksFooter.php"; ?>
+</head>
+
+<body>
+   <div class="containerr">
+      <div class="login-form">
          <?php
-            include("mover_citas.php");
-            ?>
+         include("mover_citas.php");
+         ?>
          <form method="post">
-            <h2>inicio de sesion</h2>
+            <h2>Inicio de Sesión</h2>
             <?php
             include("controller/login_control.php");
             ?>
@@ -32,16 +34,17 @@
             </div>
             <Input class="login" name="ingresar" type="submit" value="LOGIN">
             <div class="link">
-               <p>no eres parte? <a href="index.php"> registrate ahora</a></p>
+               <p>No eres parte? <a href="index.php">Registrate Ahora!</a></p>
             </div>
          </form>
       </div>
-      </div>
-      
-      <footer>
-      <?php require "./views/partials/footer.php";?>
-      </footer>
+   </div>
 
-   
-   </body>
+   <footer>
+      <?php require "./views/partials/footer.php"; ?>
+   </footer>
+
+
+</body>
+
 </html>
