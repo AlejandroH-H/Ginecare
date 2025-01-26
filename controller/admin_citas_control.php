@@ -1,5 +1,5 @@
 <?php
-include("./conexion.php");
+include("../../conexion.php");
 
 if(!empty($_POST["registro"])){
     if(empty($_POST['estado']) or empty($_POST['fecha']) or empty($_POST['hora'])    ) {

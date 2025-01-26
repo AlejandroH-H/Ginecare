@@ -38,7 +38,7 @@
     <div class="container">
     
         <?php
-include("./conexion.php");
+include("../../conexion.php");
 date_default_timezone_set('America/Caracas');
 
 $id = $_GET['id'];

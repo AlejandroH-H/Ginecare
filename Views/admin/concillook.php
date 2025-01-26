@@ -27,8 +27,8 @@
 <body>
 
     <?php
-    include("conexion.php");
-    include("controller/session_a.php");
+    include("../../conexion.php");
+    include("../../controller/session_a.php");
 
     ?>
 
@@ -107,7 +107,7 @@
             $.ajax({
                 data: parametros,
                 type: 'POST',
-                url: 'controller/concil_control.php',
+                url: '../../controller/concil_control.php',
                 success: function(data) {
                     document.getElementById("datos_buscador").innerHTML = data;
                 }

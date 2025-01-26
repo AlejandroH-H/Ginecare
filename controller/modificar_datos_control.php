@@ -14,8 +14,8 @@ if (!empty($_POST["btnmodificar"])){
         die ('<div class="alert alert-danger">¡Datos invalidos...!</div>');
     }
 
-    $stmt = $pdo->prepare("UPDATE empleados SET nombre= :nombre, apellido= :apellido, dni= :dni,
-     WHERE id= :id");
+    $stmt = $pdo->prepare("UPDATE empleados SET nombre = :nombre, apellido = :apellido, dni = :dni
+     WHERE id = :id");
     $stmt->bindParam(':id',  $id, PDO::PARAM_INT);
     $stmt->bindParam(':nombre',  $nombre, PDO::PARAM_STR);
     $stmt->bindParam(':apellido',  $apellido, PDO::PARAM_STR);

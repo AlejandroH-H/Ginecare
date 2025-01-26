@@ -1,5 +1,5 @@
 <?php
-include('../conexion.php');
+include('../../conexion.php');
 
 $stmt = $pdo->query('SELECT h.id, e.nombre as paciente, a.nombre as doctor, h.fecha,
                  h.motivo, h.estado, h.realizada FROM historial_citas h JOIN empleados e ON (h.empleado_id=e.id)
@@ -21,7 +21,7 @@ foreach ($citas as $cita) {
   echo "<td>" . ($cita['realizada'] ? 'Sí' : 'No') . "</td>";
 
   echo "<td>";
-  echo "<form action='actualizar_hcitas.php' method='post' style='display:inline;'>";
+  echo "<form action='model/actualizar_hcitas.php' method='post' style='display:inline;'>";
   echo "<input type='hidden' name='id' value='" . htmlspecialchars($cita['id']) . "'>";
 
   echo "<select name='realizada'>";

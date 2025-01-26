@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -11,8 +11,9 @@
 </head>
 
 <body>
-    <?php include("controller/session_a.php"); ?>
-    <?php require("model/m0Consulta.php"); ?>
+
+    <?php include("../../controller/session_a.php"); ?>
+    <?php require("../../model/mConsulta.php"); ?>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="inicio_admin.php">Regresar</a>
@@ -22,11 +23,11 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="m.php">Marcar Citas </a>
+                    <a class="nav-link" href="m1.php">Citas Realizadas (<?php echo $conta ?>) </a>
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="m1.php">Citas Realizadas (<?php echo $conta2 ?>) </a>
+                    <a class="nav-link" href="m0.php">Citas Que No Se Cumplieron (<?php echo $conta2 ?>) </a>
                 </li>
 
                 <li class="nav-item active">
@@ -40,7 +41,7 @@
     </nav>
 
     <div class="container">
-        <h1>Citas No Realizadas</h1>
+        <h1>Conciliar Citas Realizadas</h1>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -50,11 +51,12 @@
                     <th>Motivo</th>
                     <th>Estado</th>
                     <th>Realizada</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
 
             <tbody>
-                <?php require("model/m0Tabla.php"); ?>
+                <?php require("../../model/mTable.php"); ?>
             </tbody>
         </table>
     </div>

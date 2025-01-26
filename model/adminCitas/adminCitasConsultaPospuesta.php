@@ -2,7 +2,7 @@
 
 include("../../conexion.php");
 $stmt = $pdo->prepare("SELECT c.id, e.nombre, e.apellido, e.dni, DATE(c.fecha) as fecha, TIME(c.fecha) as hora, c.motivo, c.estado 
-         FROM citas c  JOIN empleados e  on (c.empleado_id=e.id) WHERE c.estado = 'por confirmar'");
+         FROM citas c  JOIN empleados e  on (c.empleado_id=e.id) WHERE c.estado = 'pospuesta'");
 $stmt->execute();
 $citas = $stmt->fetchAll();
 

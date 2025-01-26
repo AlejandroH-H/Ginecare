@@ -12,9 +12,9 @@
 
 <body>
     <?php
-    include("conexion.php");
-    include("controller/session_a.php");
-    include("controller/hlook_control.php");
+    include("../../conexion.php");
+    include("../../controller/session_a.php");
+    include("../../controller/hlook_control.php");
 
 
     ?>

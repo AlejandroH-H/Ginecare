@@ -1,6 +1,10 @@
 <?php
   include("../../conexion.php");
 
+  $stmt = $pdo->prepare("SELECT * FROM empleados e WHERE e.id !=1  ");
+  $stmt->execute();
+  $pt = $stmt->rowCount();
+
   $stmt = $pdo->prepare("SELECT * FROM citas c WHERE c.estado = 'por confirmar' ");
   $stmt->execute();
   $conta = $stmt->rowCount();
@@ -13,3 +17,4 @@
   $stmt->execute();
   $conta3 = $stmt->rowCount();
 ?>
+

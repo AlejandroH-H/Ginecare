@@ -10,7 +10,7 @@
 
 
     <?php
-    include('controller/session_a.php');
+    include('../../controller/session_a.php');
     //include('controller/session_l.php');
     ?>
 
@@ -21,7 +21,7 @@
             const receiver_id = document.getElementById('receiver_id').value;
 
             if (mensaje.length > 0) {
-                fetch('enviar_mensaje.php', {
+                fetch('http://localhost/salary%20-%20copia/model/enviar_mensaje.php', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded'
@@ -40,7 +40,7 @@
         function cargarMensajes() {
             const receiver_id = document.getElementById('receiver_id').value;
 
-            fetch(`cargar_mensajes.php?receiver_id=${receiver_id}`)
+            fetch(`http://localhost/salary%20-%20copia/model/cargar_mensajes.php?receiver_id=${receiver_id}`)
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('mensajes').innerHTML = data;

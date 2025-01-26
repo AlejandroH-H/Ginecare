@@ -1,7 +1,7 @@
 <?php 
 if (!empty($_GET["id"])){
-    $id=$_GET["id"];
-    $stmt = $pdo->prepare("DELETE FROM empleados WHERE id= :id");
+    $id = $_GET["id"];
+    $stmt = $pdo->prepare("DELETE FROM empleados WHERE id = :id");
     $stmt->bindParam(':id',  $id, PDO::PARAM_INT);
     
     if($stmt->execute()){

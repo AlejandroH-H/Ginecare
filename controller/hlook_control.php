@@ -1,5 +1,5 @@
 <?php 
-include ("./conexion.php");
+include ("../../conexion.php");
 
 $id = $_GET['id'];
 if(!isset($_POST['buscar'])){

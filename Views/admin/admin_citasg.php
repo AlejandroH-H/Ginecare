@@ -25,10 +25,10 @@
 <body>
 
 <?php
-include("conexion.php");
-include("controller/session_a.php");
+include("../../conexion.php");
+include("../../controller/session_a.php");
 
-include('controller/admin_citas_control.php');
+include('../../controller/admin_citas_control.php');
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -100,7 +100,7 @@ aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler
         $.ajax({
             data:parametros,
             type: 'POST',
-            url: 'controller/cl.php',
+            url: '../../controller/cl.php',
             success: function(data){
                 document.getElementById("datos_buscador").innerHTML = data;
             }

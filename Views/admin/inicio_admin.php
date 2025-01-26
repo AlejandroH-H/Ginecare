@@ -18,11 +18,11 @@
     }
   </script>
   <?php 
-  include("controller/session_a.php");
-  include("controller/eliminar_user.php");
+  include("../../controller/session_a.php");
+  include("../../controller/eliminar_user.php");
   ?>
 
-  <?php require("model/adminCitas/adminCitasEstado.php"); ?>
+  <?php require("../../model/adminCitas/adminCitasEstado.php"); ?>
 
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -50,7 +50,7 @@
 
 
         <li class="nav-item">
-          <a class="nav-link" href="controller/salir.php">Salir</a>
+          <a class="nav-link" href="../../controller/salir.php">Salir</a>
         </li>
 
       </ul>

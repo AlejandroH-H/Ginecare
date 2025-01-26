@@ -12,9 +12,8 @@
 
 <body>
 
-  <?php 
-    require("model/adminCitas/adminCitasEstado.php");
-  ?>
+
+  <?php require("../../model/adminCitas/adminCitasEstado.php"); ?>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="inicio_admin.php">Regresar</a>
@@ -28,11 +27,11 @@
         </li>
 
         <li class="nav-item active">
-          <a class="nav-link" href="admin_citasaprov.php">Revisar Citas Confirmadas (<?php echo $conta2 ?>) </a>
+          <a class="nav-link" href="admin_citas.php">Revisar Citas Por Confirmar (<?php echo $conta ?>) </a>
         </li>
 
         <li class="nav-item active">
-          <a class="nav-link" href="admin_citaspos.php">Revisar Citas Pospuestas (<?php echo $conta3 ?>) </a>
+          <a class="nav-link" href="admin_citasaprov.php">Revisar Citas Confirmadas (<?php echo $conta2 ?>) </a>
         </li>
 
         </li>
@@ -46,8 +45,8 @@
 
   <div class="col-4 p-4" id="datos">
     <?php
-    include("controller/session_a.php");
-    include('controller/admin_citas_control.php');
+    include("../../controller/session_a.php");
+    include('../../controller/admin_citas_control.php');
     ?>
 
     <table class="table">
@@ -59,15 +58,13 @@
           <th scope="col" class="bg-info">Fecha</th>
           <th scope="col" class="bg-info">Hora</th>
           <th scope="col" class="bg-info">Estado</th>
-          <th scope="col" class="bg-info">Aprobar o Eliminar</th>
+          <th scope="col" class="bg-info">Confirmar o Eliminar</th>
           <th scope="col" class="bg-info">Posponer</th>
         </tr>
       </thead>
       <tbody>
 
-        <?php
-        include("model/adminCitas/adminCitasConsulta.php");
-        ?>
+        <?php require("../../model/adminCitas/adminCitasConsultaPospuesta.php"); ?>
 
       </tbody>
     </table>

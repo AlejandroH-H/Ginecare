@@ -9,29 +9,29 @@
 </head>
 
 <body>
-  <?php require("model/gh1Consulta.php"); ?>
+  <?php require("../../model/gh1Consulta.php"); ?>
   <form class="col-6 p-4 m-auto" method="post">
     <h5 class="text-center alert alert-secondary">Modificar Datos</h5>
     <input type="hidden" name="id" value="<?= $_GET['id'] /*esto se hace para realizar 
         la consulta de modificar en el controlador,
         porque sin el id, no se puede hacer el comando UPDATE*/ ?>">
     <?php
-    include("controller/modificar_datos_control.php");
+    include("../../controller/modificar_datos_control.php");
 
-    if ($resultado) { ?>
+    if ($cita) { ?>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Nombre de la Persona</label>
-        <input type="text" class="form-control" name="nombre" value="<?php echo $resultado['nombre'] ?>">
+        <input type="text" class="form-control" name="nombre" value="<?php echo $cita['nombre'] ?>">
       </div>
 
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Apellido de la Persona</label>
-        <input type="text" class="form-control" name="apellido" value="<?php echo $resultado['apellido'] ?>">
+        <input type="text" class="form-control" name="apellido" value="<?php echo $cita['apellido'] ?>">
       </div>
 
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">DNI de la Persona</label>
-        <input type="text" class="form-control" name="dni" value="<?php echo $resultado['dni'] ?>">
+        <input type="text" class="form-control" name="dni" value="<?php echo $cita['dni'] ?>">
       </div>
 
 

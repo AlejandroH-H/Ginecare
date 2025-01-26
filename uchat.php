@@ -20,7 +20,7 @@
             const receiver_id = 1;
 
             if (mensaje.length > 0) {
-                fetch('uenviar_mensaje.php', {
+                fetch('model/uenviar_mensaje.php', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded'
@@ -39,7 +39,7 @@
         function cargarMensajes() {
             const receiver_id = 1;
 
-            fetch(`ucargar_mensajes.php?receiver_id=${receiver_id}`)
+            fetch(`model/ucargar_mensajes.php?receiver_id=${receiver_id}`)
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('mensajes').innerHTML = data;

@@ -1,5 +1,5 @@
 <?php
-include('../conexion.php');
+include('./conexion.php');
 
 $fechaActual = date('Y-m-d');
 

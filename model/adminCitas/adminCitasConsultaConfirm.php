@@ -2,7 +2,7 @@
 
 include("../../conexion.php");
 $stmt = $pdo->prepare("SELECT c.id, e.nombre, e.apellido, e.dni, DATE(c.fecha) as fecha, TIME(c.fecha) as hora, c.motivo, c.estado 
-         FROM citas c  JOIN empleados e  on (c.empleado_id=e.id) WHERE c.estado = 'por confirmar'");
+         FROM citas c  JOIN empleados e  on (c.empleado_id=e.id) WHERE c.estado = 'confirmada'");
 $stmt->execute();
 $citas = $stmt->fetchAll();
 
@@ -23,7 +23,7 @@ foreach ($citas as $cita):
         <input type="hidden" name="fecha" value="<?= $cita['fecha'] ?>">
         <input type="hidden" name="hora" value="<?= $cita['hora'] ?>">
         <select name="estado">
-          <option value="confirmada">Confirmar</option>
+          <option value="confirmada">Desconfirmar</option>
           <option value="eliminada">Eliminar</option>
         </select>
         <button type="submit" class="btn btn-primary" name="registro" value="ok">Actualizar</button>

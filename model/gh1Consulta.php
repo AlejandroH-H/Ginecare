@@ -1,6 +1,6 @@
 <?php
 //incluimos la conexion y obtenemos el ID del index
-include("../conexion.php");
+include("../../conexion.php");
 $id =$_GET["id"];
 
 //$consulta = "SELECT * FROM empleados where id=$id";

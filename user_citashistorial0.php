@@ -57,7 +57,7 @@
             </thead>
 
             <tbody>
-                <?php require("model/userCitasHistorialTabla.php"); ?>
+                <?php require("model/userCitasHistorialTabla0.php"); ?>
             </tbody>
         </table>
     </div>

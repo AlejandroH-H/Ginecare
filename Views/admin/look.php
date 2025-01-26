@@ -15,8 +15,8 @@
 <body>
 
     <?php
-    include("conexion.php");
-    include("controller/session_a.php");
+    include("../../conexion.php");
+    include("../../controller/session_a.php");
     ?>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -77,7 +77,7 @@
                 $.ajax({
                     data: parametros,
                     type: 'POST',
-                    url: 'controller/control_look.php',
+                    url: '../../controller/control_look.php',
                     success: function(data) {
                         document.getElementById("datos_buscador").innerHTML = data;
                     }

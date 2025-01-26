@@ -5,15 +5,15 @@
 <head>
    <meta charset="utf-8">
    <title>Inicio de Sesión</title>
-   <link rel="stylesheet" href="./asset/css/InicioSesionStyle.css">
-   <?php require "./views/partials/linksFooter.php"; ?>
+   <link rel="stylesheet" href="./assets/css/InicioSesionStyle.css">
+   <?php require "./Views/partials/linksFooter.php"; ?>
 </head>
 
 <body>
    <div class="containerr">
       <div class="login-form">
          <?php
-         include("mover_citas.php");
+         include("model/mover_citas.php");
          ?>
          <form method="post">
             <h2>Inicio de Sesión</h2>

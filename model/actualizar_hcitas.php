@@ -14,8 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "<script type= 'text/javascript'>
                 var result = confirm('¿Desea hacerle una observacion a la cita sin realizar?');
                 if(result){
-                    window.location.href='observacion.php?h=$id';
-                } else{window.location.href='m0.php';}
+                    window.location.href='http://localhost/salary%20-%20copia/observacion.php?h=$id';
+                } else{window.location.href='http://localhost/salary%20-%20copia/m0.php';}
                 </script>";
 
             //header("location: observacion.php?h=$id");
@@ -43,8 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     echo "<script type= 'text/javascript'>
                 var result = confirm('Se ha generado un historial al paciente ¿Desea redactar el diagnostico?');
                 if(result){
-                    window.location.href='modificar_historial.php?id=$userID';
-                } else{window.location.href='m.php';}
+                    window.location.href='http://localhost/salary%20-%20copia/modificar_historial.php?id=$userID';
+                } else{window.location.href='http://localhost/salary%20-%20copia/m.php';}
                 </script>";
                 }
 

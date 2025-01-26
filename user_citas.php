@@ -12,7 +12,6 @@
 
 <body>
     <?php require("model/userCitasConsulta.php"); ?>
-    <?php include("controller/session_l.php"); ?>
 
     <div class="col-4 p-4" id="datos">
 

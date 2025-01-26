@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -11,9 +11,8 @@
 </head>
 
 <body>
-
-    <?php include("controller/session_a.php"); ?>
-    <?php require("model/m0Consulta.php"); ?>
+    <?php include("../../controller/session_a.php"); ?>
+    <?php require("../../model/m1Consulta.php"); ?>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="inicio_admin.php">Regresar</a>
@@ -27,7 +26,7 @@
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="m0.php">Citas Que No Se Cumplieron (<?php echo $conta2 ?>) </a>
+                    <a class="nav-link" href="m1.php">Citas Realizadas (<?php echo $conta1 ?>) </a>
                 </li>
 
                 <li class="nav-item active">
@@ -41,7 +40,7 @@
     </nav>
 
     <div class="container">
-        <h1>Citas Realizadas</h1>
+        <h1>Citas No Realizadas</h1>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -55,7 +54,7 @@
             </thead>
 
             <tbody>
-                <?php require("model/m0Tabla.php"); ?>
+                <?php require("../../model/m0Tabla.php"); ?>
             </tbody>
         </table>
     </div>

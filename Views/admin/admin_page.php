@@ -19,11 +19,11 @@
   </script>
 
   <?php 
-  include("controller/session_a.php");
-  include("controller/eliminar_user.php");
+  include("../../controller/session_a.php");
+  include("../../controller/eliminar_user.php");
   ?>
 
-  <?php require("model/adminCitas/adminCitasEstado.php"); ?>
+  <?php require("../../model/adminCitas/adminCitasEstado.php"); ?>
 
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -44,7 +44,7 @@
     <form class="col-4 p-4" method="post">
       <h5 class="text-center alert alert-secondary">Registro de Personas</h5>
       <?php
-      include("controller/registro_user.php");
+      include("../../controller/registro_user.php");
       ?>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Nombre de la Persona</label>
@@ -70,7 +70,7 @@
         <label for="exampleInputEmail1" class="form-label">Contraseña</label>
         <input type="text" class="form-control" name="password">
       </div>
-      <a href='controller/salir.php'>Salir</a>
+      <a href='../../controller/salir.php'>Salir</a>
     </form>
     <div class="col-4 p-4 ">
       <table class="table margin-center">
@@ -91,7 +91,7 @@
         </thead>
         <tbody>
 
-          <?php require("model/adminCitas/adminPage.php"); ?>
+          <?php require("../../model/adminCitas/adminPage.php"); ?>
 
         </tbody>
       </table>
