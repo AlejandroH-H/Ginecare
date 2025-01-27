@@ -12,18 +12,43 @@
 
 <body>
     <?php
-    include("conexion.php");
-    include("controller/user_historialcon.php");
-
-
-
+    include("../../conexion.php");
+    include("../../controller/user_conlookcon.php");
     ?>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="inicio.php">Regresar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="user_citashistorial.php">Citas Realizadas</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="user_citashistorial0.php">Registro No Realizadas</a>
+                </li>
+
+            </ul>
+
+
+
+        </div>
+
+
+
+    </nav>
 
     <h2>Búsqueda por Fecha</h2>
 
-    <form action="user_historial.php" method="post">
+    <form action="user_conlook.php" method="post">
         <label for="campo"></label>
-        <input type="text" name="buscar" placeholder="Año-Mes-Día">
+        <input type="text" name="buscar">
         <input type="submit" value="Buscar">
     </form>
 
@@ -35,8 +60,10 @@
                     <th scope="col" class="bg-danger .bg-gradient">NOMBRE</th>
                     <th scope="col" class="bg-danger .bg-gradient">APELLIDO</th>
                     <th scope="col" class="bg-danger .bg-gradient">DNI</th>
-                    <th scope="col" class="bg-danger .bg-gradient">FECHA DEL HISTORIAL</th>
-                    <th scope="col" class="bg-danger .bg-gradient">DESCRIPCION</th>
+                    <th scope="col" class="bg-danger .bg-gradient">FECHA DE LA CITA</th>
+                    <th scope="col" class="bg-danger .bg-gradient">MOTIVO</th>
+                    <th scope="col" class="bg-danger .bg-gradient">ESTADO</th>
+                    <th scope="col" class="bg-danger .bg-gradient">OBSERVACION</th>
                     <th scope="col" class="bg-danger .bg-gradient"></th>
                 </tr>
             </thead>
@@ -52,7 +79,10 @@
                         <td class="bg-secondary .bg-gradient text-black"><?php echo $datos['apellido'] ?></td>
                         <td class="bg-secondary .bg-gradient text-black"><?php echo $datos['dni'] ?></td>
                         <td class="bg-secondary .bg-gradient text-black"><?php echo $datos['fecha'] ?></td>
-                        <td class="bg-secondary .bg-gradient text-black"><?php echo $datos['descripcion'] ?></td>
+                        <td class="bg-secondary .bg-gradient text-black"><?php echo $datos['motivo'] ?></td>
+                        <td class="bg-secondary .bg-gradient text-black"><?php echo $datos['estado'] ?></td>
+                        <td class="bg-secondary .bg-gradient text-black"><?php echo $datos['observacion'] ?></td>
+
 
                     </tr>
                 <?php

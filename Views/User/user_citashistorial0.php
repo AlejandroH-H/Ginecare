@@ -13,8 +13,7 @@
 <body>
 
     <?php
-    include("controller/session_l.php");
-
+    include("../../controller/session_l.php");
     ?>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -57,7 +56,9 @@
             </thead>
 
             <tbody>
-                <?php require("model/userCitasHistorialTabla0.php"); ?>
+                <?php 
+                require("../../model/userCitasHistorialTabla.php");
+                    ?>
             </tbody>
         </table>
     </div>

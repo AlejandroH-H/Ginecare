@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <?php require("model/userCitasConsulta.php"); ?>
+    <?php require("../../model/userCitasConsulta.php");?>
 
     <div class="col-4 p-4" id="datos">
 
@@ -31,8 +31,6 @@
             <tbody>
 
                 <?php
-
-
                 foreach ($resultado as $datos):
                 ?>
                     <tr>
@@ -45,6 +43,7 @@
                         <td><?php echo $datos['estado'] ?></td>
 
                     </tr>
+                
                 <?php
                 endforeach;
 

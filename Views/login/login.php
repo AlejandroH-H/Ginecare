@@ -5,20 +5,20 @@
 <head>
    <meta charset="utf-8">
    <title>Inicio de Sesión</title>
-   <link rel="stylesheet" href="./assets/css/InicioSesionStyle.css">
-   <?php require "./Views/partials/linksFooter.php"; ?>
+   <link rel="stylesheet" href="../../assets/css/InicioSesionStyle.css">
+   <?php require "../partials/linksFooter.php"; ?>
 </head>
 
 <body>
    <div class="containerr">
       <div class="login-form">
          <?php
-         include("model/mover_citas.php");
+         include("../../model/mover_citas.php");
          ?>
          <form method="post">
             <h2>Inicio de Sesión</h2>
             <?php
-            include("controller/login_control.php");
+            include("../../controller/login_control.php");
             ?>
             <div class="field">
                <input type="text" name="nombre" required>
@@ -41,7 +41,7 @@
    </div>
 
    <footer>
-      <?php require "./views/partials/footer.php"; ?>
+      <?php require "../partials/footer.php"; ?>
    </footer>
 
 

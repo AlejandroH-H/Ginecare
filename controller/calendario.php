@@ -38,7 +38,7 @@
     <div class="container">
     
         <?php
-include("./conexion.php");
+include("../../conexion.php");
 date_default_timezone_set('America/Caracas');
 
 $mesn = isset($_GET['mesn']) ? $_GET['mesn'] : date('m');

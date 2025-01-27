@@ -10,7 +10,7 @@
 
 
     <?php
-    include('controller/session_l.php');
+    include("../../controller/session_l.php");
     ?>
 
 
@@ -20,7 +20,7 @@
             const receiver_id = 1;
 
             if (mensaje.length > 0) {
-                fetch('model/uenviar_mensaje.php', {
+                fetch('http://localhost/paginas/proyecto%20real/GinecareParaCambios/model/uenviar_mensaje.php', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded'
@@ -39,9 +39,11 @@
         function cargarMensajes() {
             const receiver_id = 1;
 
-            fetch(`model/ucargar_mensajes.php?receiver_id=${receiver_id}`)
-                .then(response => response.text())
+            fetch(`http://localhost/paginas/proyecto%20real/GinecareParaCambios/model/ucargar_mensajes.php?receiver_id=${receiver_id}`)
+                .then(response => response.text()
+            )
                 .then(data => {
+                    console.log(data)
                     document.getElementById('mensajes').innerHTML = data;
                 });
         }
