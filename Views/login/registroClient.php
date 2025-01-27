@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="asset/css/Registrostyle.css">
-    <?php require "./views/partials/linksFooter.php"; ?>
+    <link rel="stylesheet" href="../../assets/css/Registrostyle.css">
+    <?php require "../partials/linksFooter.php"; ?>
     <title>Registro</title>
 </head>
 
@@ -15,7 +15,7 @@
             <form action="" method="post" class="formulario">
                 <h2 class="titulo">Registrate</h2>
                 <?php
-                include("controller/registro.php");
+                include("../../controller/registro.php");
                 ?>
                 <div class="input-field">
                     <input type="text" name="nombre" required>
@@ -49,7 +49,7 @@
         </div>
     </div>
     <footer>
-        <?php require "./views/partials/footer.php"; ?>
+        <?php require "../partials/footer.php"; ?>
     </footer>
 </body>
 

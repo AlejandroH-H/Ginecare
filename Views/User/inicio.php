@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="ini.css" type="text/css">
+    <link rel="stylesheet" href="../../assets/css/ini.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/ca9fa9751b.js" crossorigin="anonymous"></script>
 
@@ -13,11 +13,11 @@
 
 <body>
 
-    <?php include("controller/session_l.php"); ?>
-    <?php require("model/inicioConsulta.php"); ?>
+    <?php include("../../controller/session_l.php");?>
+    <?php include("../../model/inicioConsulta.php");?>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="controller/salir.php">Salir</a>
+        <a class="navbar-brand" href="../../controller/salir.php">Salir</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
@@ -71,7 +71,7 @@
             </thead>
             <tbody>
 
-                <?php require("model/inicioTabla.php"); ?>
+                <?php require("../../model/inicioTabla.php");?>
 
             </tbody>
         </table>

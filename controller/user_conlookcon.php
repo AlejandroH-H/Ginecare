@@ -1,5 +1,5 @@
 <?php 
-include ("./conexion.php");
+include ("../../conexion.php");
 
 include("session_l.php");
 

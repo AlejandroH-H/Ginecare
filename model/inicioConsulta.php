@@ -1,5 +1,5 @@
 <?php
-include("././conexion.php");
+include("../../conexion.php");
 
 $leidoid = 1;
 $rever = $sid;

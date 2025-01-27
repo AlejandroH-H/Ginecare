@@ -1,5 +1,5 @@
 <?php
-include("./conexion.php");
+include("../../conexion.php");
 
 
 if(!empty($_POST["ingresar"])){
@@ -57,7 +57,7 @@ if(!empty($_POST["ingresar"])){
             if($dni == 18970657){
                 $_SESSION['username']= $user['nombre'];
                 $_SESSION['sid']= 1;
-                header("location:Views/admin/inicio_admin.php");
+                header("location: Views/admin/inicio_admin.php");
             } else{
                 $_SESSION['username']= $user['nombre'];
                 $_SESSION['dni']= $dni;
@@ -67,7 +67,7 @@ if(!empty($_POST["ingresar"])){
          $stmt->execute();
         $id = $stmt->fetchColumn();
         $_SESSION['sid']= $id;
-                header("location:inicio.php");
+                header("location: ../../Views/User/inicio.php");
             }
         } else{
             echo '<p class="mensaje">¡Datos incorrectos!</p>';

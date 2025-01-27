@@ -54,7 +54,7 @@
     <form class="col-4 p-4" action="" method="post">
       <h5 class="text-center alert alert-secondary">Agendar Cita</h5>
       <?php
-      include("controller/citas_control.php");
+      include("../../controller/citas_control.php");
       ?>
 
       <div class="mb-3">
@@ -83,7 +83,7 @@
   </div>
 
   <?php
-  include("controller/calendario.php")
+  include("../../controller/calendario.php")
   ?>
 
 </body>
