@@ -118,7 +118,7 @@ foreach($citas as $cita){
     
 }
 
-echo "<h1>CALENDARIO DE CITAS $test1</h1>";
+echo "<h3>CALENDARIO DE CITAS $test1</h3>";
        echo "<div id='calendario' class='calendario'>";
 
 $diasEnMes = date('t', strtotime($primerDia));

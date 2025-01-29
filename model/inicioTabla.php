@@ -14,12 +14,11 @@ if (isset($_SESSION['username'])) {
 ?>
     <tr>
 
-      <td><?php echo $datos['id'] ?></td>
-      <td><?php echo $datos['nombre'] ?></td>
-      <td><?php echo $datos['apellido'] ?></td>
-      <td><?php echo $datos['dni'] ?></td>
+      <td class="columnas"><?php echo $datos['nombre'] ?></td>
+      <td class="columnas"><?php echo $datos['apellido'] ?></td>
+      <td class="columnas"><?php echo $datos['dni'] ?></td>
 
-      <td><a href="citas.php" class="btn btn-small btn-secondary"> <i class="fa-regular fa-clipboard"></i></a>
+      <td class="columnas"><a href="citas.php" class="btn btn-small btn-secondary"> <i class="fa-regular fa-clipboard"></i></a>
       </td>
     </tr>
 <?php

@@ -35,7 +35,7 @@
             </div>
             <Input class="login" name="ingresar" type="submit" value="LOGIN">
             <div class="link">
-               <p>No eres parte? <a href="http://localhost/paginas/proyecto%20real/GinecareconCambios/Views/login/registroClient.php">Registrate Ahora!</a></p>
+               <p>No eres parte? <a href="registroClient.php">Registrate Ahora!</a></p>
             </div>
          </form>
       </div>
