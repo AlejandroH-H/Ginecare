@@ -6,6 +6,6 @@ $sid = $_SESSION['sid'];
 
 if(!isset($usuario)){
     header("location: login.php");
-
+    
 } 
 ?>

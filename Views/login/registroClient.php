@@ -43,7 +43,7 @@
                 </div>
                 <input type="submit" class="botton" value="Registrar" name="registro">
                 <div class="inicioDeSesion">
-                    <p>Ya tiene una cuenta <a href="login.php">inicia sesion!</a></p>
+                    <p>Ya tiene una Cuenta. <a href="login.php">Inicia Sesión!</a></p>
                 </div>
             </form>
         </div>
