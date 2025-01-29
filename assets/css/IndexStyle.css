@@ -1,0 +1,81 @@
+.centro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 10px;
+  flex-direction: column;
+  color: rgb(0, 0, 0);
+  gap: 5px;
+}
+
+.centro::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../img/fotoIndex.jpg"), #000;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.info{
+  width: 400px;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+
+.info--informacion{
+  width: 600px;
+}
+
+
+.info--RegistroLogin{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 850px;
+  gap: 20px;
+}
+
+.botonlink{
+  width: 300px;
+  display: flex;
+  align-items:center ;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.botone{
+width: 100px;
+text-decoration: none;
+color: rgb(20, 20, 20);
+padding: 5px;
+margin: 5px 0;
+border: 1px solid #e35052;
+border-radius:6px;
+background-color:#1b1b1b;
+color: white;
+transition: padding 0.3s;
+text-align: center;
+}
+
+.botone:hover{
+  text-decoration: none;
+  color: #ffffff;
+  padding: 8px;
+  background-color:#1d1c1c;
+}
+
+.botone:active{
+  color: #000000;
+  padding: 8px;
+  background-color: #ffffff;
+}
+

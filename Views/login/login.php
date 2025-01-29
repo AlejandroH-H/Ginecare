@@ -6,10 +6,11 @@
    <meta charset="utf-8">
    <title>Inicio de Sesión</title>
    <link rel="stylesheet" href="../../assets/css/InicioSesionStyle.css">
+   <link rel="stylesheet" href="../../assets/css/HeaderStyles.css">
    <?php require "../partials/linksFooter.php"; ?>
 </head>
-
 <body>
+<?php require "../partials/header.php";?>
    <div class="containerr">
       <div class="login-form">
          <?php
@@ -34,7 +35,7 @@
             </div>
             <Input class="login" name="ingresar" type="submit" value="LOGIN">
             <div class="link">
-               <p>No eres parte? <a href="index.php">Registrate Ahora!</a></p>
+               <p>No eres parte? <a href="http://localhost/paginas/proyecto%20real/GinecareconCambios/Views/login/registroClient.php">Registrate Ahora!</a></p>
             </div>
          </form>
       </div>

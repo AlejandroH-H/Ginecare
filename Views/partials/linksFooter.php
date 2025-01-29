@@ -5,3 +5,4 @@
   <link href="../../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="../../assets/vendor/venobox/venobox.css" rel="stylesheet">
   <link href="../../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link rel="shortcut icon" href="../../assets/img/logo.jpg" type="image/x-icon">
