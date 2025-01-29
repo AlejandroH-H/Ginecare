@@ -57,7 +57,7 @@ if(!empty($_POST["ingresar"])){
             if($dni == 18970657){
                 $_SESSION['username']= $user['nombre'];
                 $_SESSION['sid']= 1;
-                header("location: Views/admin/inicio_admin.php");
+                header("location: ../../Views/admin/inicio_admin.php");
             } else{
                 $_SESSION['username']= $user['nombre'];
                 $_SESSION['dni']= $dni;
