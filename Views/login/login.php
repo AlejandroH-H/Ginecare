@@ -6,10 +6,11 @@
    <meta charset="utf-8">
    <title>Inicio de Sesión</title>
    <link rel="stylesheet" href="../../assets/css/InicioSesionStyle.css">
+   <link rel="stylesheet" href="../../assets/css/HeaderStyles.css">
    <?php require "../partials/linksFooter.php"; ?>
 </head>
-
 <body>
+<?php require "../partials/header.php";?>
    <div class="containerr">
       <div class="login-form">
          <?php
