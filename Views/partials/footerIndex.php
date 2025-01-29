@@ -14,8 +14,8 @@
       <div class="col-lg-2 col-md-6 footer-links">
         <h4>Enlaces</h4>
         <ul>
-          <li><i class="bx bx-chevron-right"></i> <a href="http://localhost/paginas/proyecto%20real/GinecareconCambios/Views/login/login.php">Inicio sesion </a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="http://localhost/paginas/proyecto%20real/GinecareconCambios/Views/login/registroClient.php">registro</a></li>
+        <li><i class="bx bx-chevron-right"></i> <a href="Views/login/login.php">Inicio sesion </a></li>
+        <li><i class="bx bx-chevron-right"></i> <a href="Views/login/registroClient.php">registro</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="#">Terminos y servicios</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="#">Politica y privacidad</a></li>
         </ul>
