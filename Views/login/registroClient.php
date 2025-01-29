@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/Registrostyle.css">
+    <link rel="stylesheet" href="../../assets/css/HeaderStyles.css">
     <?php require "../partials/linksFooter.php"; ?>
     <title>Registro</title>
 </head>
 
 <body>
+<?php require "../../Views/partials/header.php";?>
     <div class="padre">
         <div class="containerr">
             <form action="" method="post" class="formulario">
@@ -43,7 +45,7 @@
                 </div>
                 <input type="submit" class="botton" value="Registrar" name="registro">
                 <div class="inicioDeSesion">
-                    <p>Ya tiene una cuenta <a href="login.php">inicia sesion!</a></p>
+                    <p>Ya tiene una cuenta <a href="http://localhost/paginas/proyecto%20real/GinecareconCambios/Views/login/login.php">inicia sesion!</a></p>
                 </div>
             </form>
         </div>
