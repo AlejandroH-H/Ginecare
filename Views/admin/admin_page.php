@@ -20,7 +20,6 @@
 
   <?php 
   include("../../controller/session_a.php");
-  include("../../controller/eliminar_user.php");
   ?>
 
   <?php require("../../model/adminCitas/adminCitasEstado.php"); ?>
