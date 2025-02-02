@@ -19,7 +19,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark text-light bg-dark px-2">
         <h4>Bienvenido <?php echo $usuario; ?></h4>
-
+        <a class="linkCitasPend" href="perfil.php">Perfil</a>
         <!-- Esto es un boton de más contenido para cuando la pantalla sea más pequeña -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-expanded="false" aria-label="Toggle navigation">
