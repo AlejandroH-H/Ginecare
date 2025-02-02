@@ -6,17 +6,26 @@
     <title>Calendario de Citas</title>
 
     <style>
+        .container{
+          background-color: #1b1b1b;
+          text-align: center;
+          border-radius: 15px;
+        }
+        
         .disponible{
-            background-color: green;
+            background-color:rgb(21, 106, 155);
             color: white;
+            border-radius: 10px;
         }
         .ocupado{
-            background-color: red;
-            color: white;
+            background-color: rgb(136, 17, 17);
+            color: white;          
+            border-radius: 10px;
         }
         .no-disponible{
             background-color: gray;
             color: white;
+            border-radius: 10px;
         }
         .calendario{
             display: grid;
@@ -30,6 +39,17 @@
         }
         .horario{
             margin: 5px 0;
+        }
+        .dias{
+          display: flex;
+          flex-direction: row;
+          gap: 50px;
+          justify-content: center;
+          background-color: #1b1b1b;
+          color: white;
+        }
+        .titulo{
+          color: white;
         }
     </style>
 
@@ -118,7 +138,17 @@ foreach($citas as $cita){
     
 }
 
-echo "<h3>CALENDARIO DE CITAS $test1</h3>";
+echo "<h3 class='titulo'>CALENDARIO DE CITAS $test1</h3>";
+echo" 
+<div class='dias'>
+<h2>sabado</h2>
+<h2>domingo</h2>
+<h2>lunes</h2>
+<h2>martes</h2>
+<h2>miercoles</h2>
+<h2>jueves</h2>
+<h2>viernes</h2>
+</div>";
        echo "<div id='calendario' class='calendario'>";
 
 $diasEnMes = date('t', strtotime($primerDia));
@@ -129,29 +159,29 @@ for($dia = 1; $dia <= $diasEnMes; $dia++){
 
     switch ($test) {
         case "Sunday":
-            $test = "Domingo";
+            $test = false;
         break;
         case "Monday":
-            $test = "Lunes";
+            $test = " ";
           break;
         case "Tuesday":
-            $test = "Martes";
+            $test = " ";
           break;
         case "Wednesday":
-            $test = "Miercoles";
+            $test = " ";
          break;
          case "Thursday":
-            $test = "Jueves";
+            $test = " ";
          break;
          case "Friday":
-            $test = "Viernes";
+            $test = " ";
             break;
         default:
-        $test = "Sabado";
+        $test = " ";
       }
 
     $estado = 'disponible';
-    if($fecha<=$fechaActual OR $test == "Domingo" ){
+    if($fecha<=$fechaActual OR $test == false ){
         $estado = 'no-disponible';
     } elseif(isset($citasPorFecha[$fecha])){
         $estadoMañana = isset($citasPorFecha[$fecha]) && $citasPorFecha[$fecha]['mañana'] ? 'ocupado' : 'disponible';
