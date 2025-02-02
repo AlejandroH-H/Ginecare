@@ -59,15 +59,27 @@ if(!empty($_POST["ingresar"])){
                 $_SESSION['sid']= 1;
                 header("location: ../../Views/admin/inicio_admin.php");
             } else{
-                $_SESSION['username']= $user['nombre'];
+                $stmtr = $pdo->prepare("SELECT restringido FROM empleados WHERE usuario = :usuario AND dni = :dni ");
+                $stmtr->bindParam(':usuario',  $usuario, PDO::PARAM_STR);
+                $stmtr->bindParam(':dni',  $dni, PDO::PARAM_STR);
+                $stmtr->execute();
+                $r = $stmtr->fetchColumn();
+                if($r==1){
+                    die("¡Cuenta restringida!");
+                }else{
+                    $_SESSION['username']= $user['nombre'];
                 $_SESSION['dni']= $dni;
-                $stmt = $pdo->prepare("SELECT id FROM empleados WHERE usuario = :usuario AND dni = :dni ");
-        $stmt->bindParam(':usuario',  $usuario, PDO::PARAM_STR);
-        $stmt->bindParam(':dni',  $dni, PDO::PARAM_STR);
-         $stmt->execute();
-        $id = $stmt->fetchColumn();
-        $_SESSION['sid']= $id;
+                $stmt = $pdo->prepare("SELECT id FROM empleados WHERE usuario = :usuario AND dni = :dni");
+                $stmt->bindParam(':usuario',  $usuario, PDO::PARAM_STR);
+                $stmt->bindParam(':dni',  $dni, PDO::PARAM_STR);
+                $stmt->execute();
+                 $id = $stmt->fetchColumn();
+                $_SESSION['sid']= $id;
                 header("location: ../../Views/User/inicio.php");
+
+                }
+
+                
             }
         } else{
             echo '<p class="mensaje">¡Datos incorrectos!</p>';

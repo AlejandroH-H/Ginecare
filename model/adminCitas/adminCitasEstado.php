@@ -5,6 +5,10 @@
   $stmt->execute();
   $pt = $stmt->rowCount();
 
+  $stmt = $pdo->prepare("SELECT * FROM empleados e WHERE e.restringido = 1  ");
+  $stmt->execute();
+  $ptr = $stmt->rowCount();
+
   $stmt = $pdo->prepare("SELECT * FROM citas c WHERE c.estado = 'por confirmar' ");
   $stmt->execute();
   $conta = $stmt->rowCount();

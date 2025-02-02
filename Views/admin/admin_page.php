@@ -13,7 +13,13 @@
 
   <script>
     function eliminar() {
-      var respuesta = confirm("Estas seguro de que deseas eliminar?")
+      var respuesta = confirm("¿Está seguro de que desea eliminar a éste paciente?")
+      return respuesta
+    }
+
+
+    function bloquear() {
+      var respuesta = confirm("¿Está seguro de que desea bloquear a éste paciente?")
       return respuesta
     }
   </script>
@@ -34,6 +40,10 @@
       <ul class="navbar-nav">
         <li class="nav-item active">
           <a class="nav-link" href="look.php">Buscador de Pacientes</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="Pacientes_blocked.php">Pacientes Bloqueados <?php if($ptr>0){echo "(".$ptr.")";}?></a>
         </li>
       </ul>
     </div>
@@ -81,6 +91,7 @@
             <th scope="col" class="bg-danger .bg-gradient">DNI</th>
             <th scope="col" class="bg-danger .bg-gradient">Editar Datos</th>
             <th scope="col" class="bg-danger .bg-gradient">Borrar Paciente</th>
+            <th scope="col" class="bg-danger .bg-gradient">Bloquear Paciente</th>
             <th scope="col" class="bg-danger .bg-gradient">Historial Diagnostico</th>
             <th scope="col" class="bg-danger .bg-gradient">Generar Historial Diagnostico</th>
             <th scope="col" class="bg-danger .bg-gradient">Chat</th>
