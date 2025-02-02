@@ -5,7 +5,7 @@
     </div>
 
     <div class="botones">
-    <a  class="boton" href="../../Views/login/login.php" ><span>iniciar sesion</span><i></i></a>
-    <a  class="boton" href="../../Views/login/registroClient.php"><span>registrate</span><i></i></a>
+    <a  class="boton"  style="--clr: #e35052" href="../../Views/login/login.php" ><span>iniciar sesion</span><i></i></a>
+    <a  class="boton" style="--clr: #e35052"  href="../../Views/login/registroClient.php"><span>registrate</span><i></i></a>
     </div>
   </header>

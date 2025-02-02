@@ -1,8 +1,9 @@
 <?php
 include("../../conexion.php");
 include("../../controller/eliminar_user.php");
+include("../../controller/bloquear_user.php");
 
-$stmt = $pdo->prepare("SELECT * FROM empleados WHERE id !=1");
+$stmt = $pdo->prepare("SELECT * FROM empleados WHERE id !=1 AND restringido != 1");
 $stmt->execute();
 $resultado = $stmt->fetchAll();
 /*$consulta = "SELECT * FROM empleados WHERE id!=1";
@@ -25,6 +26,8 @@ foreach ($resultado as $datos):
                                       ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
     </td>
     <td class="bg-dark text-white"><a onclick="return eliminar()" href="admin_page.php?id=<?= $datos['id'] //mandamos el id?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+    </td>
+    <td class="bg-dark text-white"><a onclick="return bloquear()" href="admin_page.php?userid=<?= $datos['id'] //mandamos el id?>" class="btn btn-small btn-secondary"><i class="fa-solid fa-shield-halved"></i></a>
     </td>
     <td class="bg-dark text-white"><a href="admin_historial.php?id=<?= $datos['id'] //mandamos el id 
                                                                     ?>" class="btn btn-small btn-info"><i class="fa-solid fa-pen-to-square"></i></a>
