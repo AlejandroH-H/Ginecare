@@ -2,19 +2,19 @@
 include("../../conexion.php");
 
 
-if(!empty($_POST["ingresar"])){
-    if (empty($_POST["nombre"]) or empty($_POST["dni"]) or empty($_POST['password'])){
+if (!empty($_POST["ingresar"])) {
+    if (empty($_POST["nombre"]) or empty($_POST["email"]) or empty($_POST["dni"]) or empty($_POST['password'])) {
         echo '<div>¡Los campos están vacios!</div>';
-
-    }else{
+    } else {
         session_start();
-        $usuario = trim(filter_var($_POST['nombre'],FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-        $dni = trim(filter_var($_POST['dni'],FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-        $password = trim(filter_var($_POST['password'],FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+        $usuario = trim(filter_var($_POST['nombre'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+        $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+        $dni = trim(filter_var($_POST['dni'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+        $password = trim(filter_var($_POST['password'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
 
 
 
-        if(!$usuario || !$dni || !$password){
+        if (!$usuario || !$dni || !$password || !$email) {
             die("Datos inválidos.");
         }
 
@@ -44,43 +44,35 @@ if(!empty($_POST["ingresar"])){
         
         
         */
-        
-        $stmt = $pdo->prepare("SELECT * FROM empleados WHERE usuario = :usuario AND dni = :dni ");
+
+        $stmt = $pdo->prepare("SELECT * FROM empleados WHERE usuario = :usuario AND dni = :dni AND email = :email ");
         $stmt->bindParam(':usuario',  $usuario, PDO::PARAM_STR);
         $stmt->bindParam(':dni',  $dni, PDO::PARAM_STR);
+        $stmt->bindParam(':email',  $email, PDO::PARAM_STR);
         $stmt->execute();
         $user = $stmt->fetch();
         //$result1= $stmt->rowCount();
         //$result = $stmt->fetchObject();
 
-        if($user && password_verify($password, $user['password'])){
-            if($dni == 18970657){
-                $_SESSION['username']= $user['nombre'];
-                $_SESSION['sid']= 1;
+        if ($user && password_verify($password, $user['password'])) {
+            if ($dni == 18970657) {
+                $_SESSION['username'] = $user['nombre'];
+                $_SESSION['sid'] = 1;
                 header("location: ../../Views/admin/inicio_admin.php");
-            } else{
-                $_SESSION['username']= $user['nombre'];
-                $_SESSION['dni']= $dni;
-                $stmt = $pdo->prepare("SELECT id FROM empleados WHERE usuario = :usuario AND dni = :dni ");
-        $stmt->bindParam(':usuario',  $usuario, PDO::PARAM_STR);
-        $stmt->bindParam(':dni',  $dni, PDO::PARAM_STR);
-         $stmt->execute();
-        $id = $stmt->fetchColumn();
-        $_SESSION['sid']= $id;
+            } else {
+                $_SESSION['username'] = $user['nombre'];
+                $_SESSION['userLastname'] = $user['apellido'];
+                $_SESSION['usuario'] = $user['usuario'];
+                $_SESSION['dni'] = $user['dni'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['nacimiento'] = $user['nacimiento'];
+                $_SESSION['phone'] = $user['phone'];
+                $_SESSION['sid'] = $user['id'];
+
                 header("location: ../../Views/User/inicio.php");
             }
-        } else{
+        } else {
             echo '<p class="mensaje">¡Datos incorrectos!</p>';
         }
-
-        
-        }
-
-
-        
-
-        
-    } 
-
-
-?>
+    }
+}

@@ -31,7 +31,7 @@
 
                 <div class="input-field">
                     <input type="text" name="usuario" required minlength="5" maxlength="20">
-                    <label for="">Nombre de usuario</label>
+                    <label for="">Usuario</label>
                 </div>
 
                 <div class="input-field">
@@ -40,10 +40,27 @@
                 </div>
 
                 <div class="input-field">
+                    <input type="date" name="date" required>
+                    <label for="">Fecha de Nacimiento</label>
+                </div>
+
+                <div class="input-field">
+                    <input type="email" name="email" required>
+                    <label for="">Correo Electrónico</label>
+                </div>
+
+                <div class="input-field">
+                    <input type="text" name="phone" required>
+                    <label for="">Número de Teléfono</label>
+                </div>
+
+                <div class="input-field">
                     <input type="text" name="password" required minlength="6" maxlength="20">
                     <label for="">Contraseña</label>
                 </div>
+
                 <input type="submit" class="botton" value="Registrar" name="registro">
+
                 <div class="inicioDeSesion">
                     <p>Ya tiene una Cuenta. <a href="login.php">Inicia Sesión!</a></p>
                 </div>

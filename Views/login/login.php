@@ -26,6 +26,10 @@
                <label>Nombre de usuario</label>
             </div>
             <div class="field">
+               <input type="email" name="email">
+               <label for="">Correo Electrónico</label>
+            </div>
+            <div class="field">
                <input type="text" name="dni" required minlength="7" maxlength="8">
                <label>DNI</label>
             </div>
