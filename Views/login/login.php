@@ -26,7 +26,7 @@
                <label>Nombre de usuario</label>
             </div>
             <div class="field">
-               <input type="email" name="email">
+               <input type="email" name="email" required>
                <label for="">Correo Electrónico</label>
             </div>
             <div class="field">
