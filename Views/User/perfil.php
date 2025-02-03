@@ -43,7 +43,21 @@
               <div class="col-sm-4 bg-c-lite-green user-profile">
                 <div class="card-block text-center text-white">
                   <div class="m-b-25">
-                    <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
+                  <?php 
+                      require '../../conexion.php';
+                      $stmt = $pdo->prepare("SELECT fotoPerfil, tipoDeFoto FROM empleados WHERE id = :id");
+                      $stmt->bindParam(':id', $sid);
+                      $stmt->execute();
+                      $stmt->bindColumn(1, $fotoPerfil, PDO::PARAM_LOB);
+                      $stmt->bindColumn(2, $tipo);
+                      $stmt->fetch(PDO::FETCH_BOUND);
+                      if ($fotoPerfil) {
+                                    $fotoPerfil = stream_get_contents($fotoPerfil);
+                          echo '<img src="data:' . $tipo . ';base64,' . base64_encode($fotoPerfil) . '" class="imagen" alt="Foto de Perfil">';
+                      } else { 
+                        echo'<img src="../../assets/img/fotoperfil.avif" class="imagen" alt="User-Profile-Image">';
+                      }
+                        ?>
                   </div>
                   <h6 class="f-w-600"><?php echo $usuario?></h6>
                   <p><?php echo $dni?></p>
@@ -75,6 +89,13 @@
                       <p class="m-b-10 f-w-600">Edad</p>
                       <h6 class="text-muted f-w-400"><?php echo edades($nacimiento)?></h6>
                     </div>
+                    <div class="col-sm-6">
+                      <p class="m-b-10 f-w-600">foto de perfil</p>
+                      <form action="../../model/imagenPerfil.php" method="post" enctype="multipart/form-data" >
+                      <input type="file" id="fotoPerfil" name="fotoPerfil" class="botones imageninput">
+                      <input type="submit" value="Subir Imagen" class="botones">
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -84,6 +105,24 @@
       </div>
     </div>
   </div>
+  
+  <div class="contenedor">
+  <div class="opciones">
+  <h2>detalles:</h2>
+  <h4>en caso de tener algun tipo de enfermedad cronica o alergia por favor ingresarlo en el siguiente formulario:</h4>
+  <?php
+    if (isset($_GET['mensaje'])) {
+        echo '<p class="mensajeConfimacion">' . htmlspecialchars($_GET['mensaje']) . '</p>';
+    }
+    ?>
+  <form action="../../model/detalleUser.php" method="post">
+  <textarea class="texto" name="detalles" id="detalles"  rows="4" cols="50" required></textarea>
+  <br>
+  <input type="submit" value="subir" class="botonDeTextarea" >
+  </form>
+  </div>
+  </div>
+
 </body>
 
 </html>

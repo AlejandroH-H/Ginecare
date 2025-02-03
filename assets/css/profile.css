@@ -1,5 +1,6 @@
 .padding {
-  padding: 3rem !important
+  padding-top: 3rem !important;
+  padding-left: 6rem; 
 }
 
 .user-card-full {
@@ -129,3 +130,106 @@ p {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+
+/* css de opciones del perfil*/
+
+/*estilos de detalles*/
+
+.mensajeConfimacion{
+  width: 200px;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border: 3px solid  rgb(3, 59, 212);
+}
+
+.contenedor{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.opciones{
+  color: white;
+  background-color: #1b1b1b;
+  width: 650px;
+  height: 400px;
+  border: 2px solid rgb(3, 59, 212);
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  flex-direction: column;
+}
+.texto{
+  width: 300px;
+  height: 150px;
+  border-radius: 10px;
+}
+.botonDeTextarea{
+  width: 150px;
+  text-decoration: none;
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid #4b1a1b;
+  border-radius:6px;
+  background-color:rgb(24, 46, 107);
+  color: white;
+  transition: padding 0.3s;
+  text-align: center;
+
+}
+.botonDeTextarea:hover{
+  text-decoration: none;
+  color: #ffffff;
+  padding: 4px;
+  background-color:rgb(16, 60, 180);
+  border: 1px solid #d1d1d1;
+}
+
+.botonDeTextarea:active{
+  color: #000000;
+  padding: 8px;
+  background-color: #ffffff;
+}
+
+
+/* estilos de la imagen de perfil*/
+.botones{
+  width: 150px;
+  text-decoration: none;
+  color: rgb(20, 20, 20);
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid #e35052;
+  border-radius:6px;
+  background-color:#1b1b1b;
+  color: white;
+  transition: padding 0.3s;
+  text-align: center;
+  }
+  
+  .botones:hover{
+    text-decoration: none;
+    color: #ffffff;
+    padding: 8px;
+    background-color:#1d1c1c;
+  }
+  
+  .botones:active{
+    color: #000000;
+    padding: 8px;
+    background-color: #ffffff;
+  }
+  
+  .imageninput{
+    width: 250px;
+  }
+
+  .imagen{
+    width: 90px;
+    height: 90px;
+    border-radius: 40px;
+  }
