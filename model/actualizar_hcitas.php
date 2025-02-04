@@ -3,6 +3,7 @@ include('../../conexion.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['id'];
+    $userid = $_POST['userid'];
     $realizada = $_POST['realizada'];
 
     $stmt = $pdo->prepare('UPDATE historial_citas SET realizada = :realizada, modificada = 1 WHERE id = :id');
@@ -14,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "<script type= 'text/javascript'>
                 var result = confirm('¿Desea hacerle una observacion a la cita sin realizar?');
                 if(result){
-                    window.location.href='http://localhost/salary%20-%20copia/Views/admin/observacion.php?h=$id';
+                    window.location.href='http://localhost/salary%20-%20copia/Views/admin/observacion.php?h=$id&userid=$userid';
                 } else{window.location.href='http://localhost/salary%20-%20copia/Views/admin/m0.php';}
                 </script>";
 

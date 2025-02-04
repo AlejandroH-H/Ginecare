@@ -1,7 +1,7 @@
 <?php
 include('../../conexion.php');
 
-$stmt = $pdo->query('SELECT h.id, e.nombre as paciente, e.apellido as paciente1, e.dni, a.nombre as doctor, h.fecha,
+$stmt = $pdo->query('SELECT h.id, e.id as userid, e.nombre as paciente, e.apellido as paciente1, e.dni, a.nombre as doctor, h.fecha,
                  h.motivo, h.estado, h.realizada FROM historial_citas h JOIN empleados e ON (h.empleado_id=e.id)
                 JOIN admin a ON (h.admin_id=a.id) WHERE h.modificada = 0');
 
@@ -26,6 +26,8 @@ foreach ($citas as $cita) {
   echo "<form action='' method='post' style='display:inline;'>";
   include('actualizar_hcitas.php');
   echo "<input type='hidden' name='id' value='" . htmlspecialchars($cita['id']) . "'>";
+  echo "<input type='hidden' name='userid' value='" . htmlspecialchars($cita['userid']) . "'>";
+
 
   echo "<select name='realizada'>";
   echo "<option value='1'" . ($cita['realizada'] ? ' selected' : '') . ">Sí</option>";

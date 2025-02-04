@@ -11,18 +11,16 @@
 </head>
 
 <body>
-    <?php require("model/observacionConsulta.php"); ?>
+    <?php require("../../model/observacionConsulta.php"); ?>
     <?php
-    include("controller/session_a.php");
+    include("../../controller/session_a.php");
     ?>
 
     <form class="col-6 p-4 m-auto" method="post">
         <h5 class="text-center alert alert-secondary">Observacion al Paciente</h5>
-        <input type="hidden" name="h" value="<?= $_GET['h'] /*esto se hace para realizar 
-        la consulta de modificar en el controlador,
-        porque sin el id, no se puede hacer el comando UPDATE*/ ?>">
+        <input type="hidden" name="h" value="<?= $_GET['h'] ?>">
         <?php
-        include("controller/observacioncontrol.php");
+        include("../../controller/observacioncontrol.php");
 
         if ($cita) { ?>
             <table class="table">
