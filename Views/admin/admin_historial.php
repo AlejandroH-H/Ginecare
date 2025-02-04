@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historiales</title>
+    <link rel="stylesheet" href="../../assets/css/admin.css">
+    <link rel="stylesheet" href="../../assets/css/decoration.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/ca9fa9751b.js" crossorigin="anonymous"></script>
 
@@ -19,38 +21,35 @@
 
     ?>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="admin_page.php">Volver a la página principal</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
-        </button>
+<nav class="navbar navbar-expand-lg navbar-dark text-light bg-dark px-2 d-flex justify-content-between">
+        <a class="linkCitasPend" href="admin_page.php">Volver</a>
+
+        <h3>Búsqueda por Fecha</h3>
+
+        <form action="admin_historial.php?id=<?= $id ?>" method="post">
+            <label for="campo"></label>
+            <input type="text" name="buscar" placeholder="Año-Mes-Día">
+            <input type="submit" value="Buscar">
+        </form>
+
+        <a class="linkEdit" href="../login/login.php">Salir</a>
     </nav>
 
-    <h2>Búsqueda por Fecha</h2>
+    <div id="datos">
 
-    <form action="admin_historial.php?id=<?= $id ?>" method="post">
-        <label for="campo"></label>
-        <input type="text" name="buscar">
-        <input type="submit" value="Buscar">
-    </form>
-
-    <br>
-
-    <div class="col-4 p-4" id="datos">
-
-        <table class="table">
+        <table class="tabla">
             <thead>
                 <tr>
-                    <th scope="col" class="bg-danger .bg-gradient">NOMBRE</th>
-                    <th scope="col" class="bg-danger .bg-gradient">APELLIDO</th>
-                    <th scope="col" class="bg-danger .bg-gradient">DNI</th>
-                    <th scope="col" class="bg-danger .bg-gradient">FECHA DEL HISTORIAL</th>
-                    <th scope="col" class="bg-danger .bg-gradient">DIAGNOSTICO</th>
-                    <th scope="col" class="bg-danger .bg-gradient">Editar Diagnostico</th>
-                    <th scope="col" class="bg-danger .bg-gradient"></th>
+                    <th scope="col" class="columnas columTitulo">NOMBRE</th>
+                    <th scope="col" class="columnas columTitulo">APELLIDO</th>
+                    <th scope="col" class="columnas columTitulo">DNI</th>
+                    <th scope="col" class="columnas columTitulo">FECHA DEL HISTORIAL</th>
+                    <th scope="col" class="columnas columTitulo">DIAGNOSTICO</th>
+                    <th scope="col" class="columnas columTitulo">Editar Diagnostico</th>
                 </tr>
             </thead>
             <tbody>
+
 
                 <?php
 
@@ -58,14 +57,13 @@
                 foreach ($resultado as $datos):
                 ?>
                     <tr>
-                        <td class="bg-secondary .bg-gradient text-black"><?php echo $datos['nombre'] ?></td>
-                        <td class="bg-secondary .bg-gradient text-black"><?php echo $datos['apellido'] ?></td>
-                        <td class="bg-secondary .bg-gradient text-black"><?php echo $datos['dni'] ?></td>
-                        <td class="bg-secondary .bg-gradient text-black"><?php echo $datos['fecha'] ?></td>
-                        <td class="bg-secondary .bg-gradient text-black"><?php echo $datos['descripcion'] ?></td>
-                        <td class="bg-secondary .bg-gradient text-black">
-                            <a href="modificar_historial.php?id=<?= $id //mandamos el id 
-                                                                ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <td class="columnas"><?php echo $datos['nombre'] ?></td>
+                        <td class="columnas"><?php echo $datos['apellido'] ?></td>
+                        <td class="columnas"><?php echo $datos['dni'] ?></td>
+                        <td class="columnas"><?php echo $datos['fecha'] ?></td>
+                        <td class="columnas"><?php echo $datos['descripcion'] ?></td>
+                        <td class="columnas">
+                            <a href="modificar_historial.php?id=<?= $id ?>&id1=<?= $datos['id'] ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
 
                         </td>
 

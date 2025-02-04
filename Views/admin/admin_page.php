@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Salario</title>
+  <title>Admin</title>
+  <link rel="stylesheet" href="../../assets/css/admin2.css">
+  <link rel="stylesheet" href="../../assets/css/decoration.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/ca9fa9751b.js" crossorigin="anonymous"></script>
 </head>
@@ -30,73 +32,49 @@
 
   <?php require("../../model/adminCitas/adminCitasEstado.php"); ?>
 
+  <nav class="navbar navbar-expand-lg navbar-dark text-light bg-dark px-2">
+        <a class="linkHistorial" href="inicio_admin.php">Regresar</a>
+        <!-- Esto es un boton de más contenido para cuando la pantalla sea más pequeña -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="inicio_admin.php">Inicio</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <!-- Lista de Botones -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav pum">
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="look.php">Buscador de Pacientes</a>
-        </li>
+                <li class="nav-item active">
+                    <a class="linkSalir" href="look.php">Buscador de Pacientes</a>
+                </li>
 
-        <li class="nav-item active">
-          <a class="nav-link" href="Pacientes_blocked.php">Pacientes Bloqueados <?php if($ptr>0){echo "(".$ptr.")";}?></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+                <li class="nav-item active">
+                    <a class="linkSalir" href="Pacientes_blocked.php">Pacientes Bloqueados <?php if($ptr>0){echo "(".$ptr.")";}?> </a>
+                </li>
 
-  <div class="container-fluid row">
-    <form class="col-4 p-4" method="post">
-      <h5 class="text-center alert alert-secondary">Registro de Personas</h5>
-      <?php
-      include("../../controller/registro_user.php");
-      ?>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Nombre de la Persona</label>
-        <input type="text" class="form-control" name="nombre">
-      </div>
+            </ul>
+        </div>
+        <a class="navbar-brand linkEdit" href="../../controller/salir.php"><img src="../../assets/img/box-arrow-right.svg"></a>
+    </nav>
 
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Apellido de la Persona</label>
-        <input type="text" class="form-control" name="apellido">
-      </div>
 
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">DNI de la Persona</label>
-        <input type="text" class="form-control" name="dni">
-      </div>
 
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Nombre de Usuario</label>
-        <input type="text" class="form-control" name="usuario" minlength="5" maxlength="20">
-      </div>
-
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Contraseña</label>
-        <input type="text" class="form-control" name="password">
-      </div>
-      <a href='../../controller/salir.php'>Salir</a>
     </form>
-    <div class="col-4 p-4 ">
-      <table class="table margin-center">
+    <div id="datos" style="color: black;" >
+      <table class="tabla">
         <thead>
           <tr>
-            <th scope="col" class="bg-danger .bg-gradient">ID</th>
-            <th scope="col" class="bg-danger .bg-gradient">NOMBRES</th>
-            <th scope="col" class="bg-danger .bg-gradient">APELLIDOS</th>
-            <th scope="col" class="bg-danger .bg-gradient">DNI</th>
-            <th scope="col" class="bg-danger .bg-gradient">Editar Datos</th>
-            <th scope="col" class="bg-danger .bg-gradient">Borrar Paciente</th>
-            <th scope="col" class="bg-danger .bg-gradient">Bloquear Paciente</th>
-            <th scope="col" class="bg-danger .bg-gradient">Historial Diagnostico</th>
-            <th scope="col" class="bg-danger .bg-gradient">Generar Historial Diagnostico</th>
-            <th scope="col" class="bg-danger .bg-gradient">Chat</th>
-            <th scope="col" class="bg-danger .bg-gradient">Mensajes Nuevos</th>
-            <th scope="col" class="bg-danger .bg-gradient"></th>
+            <th scope="col" class="columnas columTitulo">ID</th>
+            <th scope="col" class="columnas columTitulo">NOMBRES</th>
+            <th scope="col" class="columnas columTitulo">APELLIDOS</th>
+            <th scope="col" class="columnas columTitulo">DNI</th>
+            <th scope="col" class="columnas columTitulo">Editar Datos</th>
+            <th scope="col" class="columnas columTitulo">Borrar Paciente</th>
+            <th scope="col" class="columnas columTitulo">Bloquear Paciente</th>
+            <th scope="col" class="columnas columTitulo">Historial Diagnostico</th>
+            <th scope="col" class="columnas columTitulo">Generar Historial Diagnostico</th>
+            <th scope="col" class="columnas columTitulo">Chat</th>
+            <th scope="col" class="columnas columTitulo">Mensajes Nuevos</th>
           </tr>
         </thead>
         <tbody>

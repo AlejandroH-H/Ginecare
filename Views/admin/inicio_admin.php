@@ -4,12 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Salario</title>
+  <title>Admin</title>
+  <link rel="stylesheet" href="../../assets/css/admin.css">
+  <link rel="stylesheet" href="../../assets/css/decoration.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/ca9fa9751b.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style="background-color: black;">
 
   <script>
     function eliminar() {
@@ -24,43 +26,44 @@
 
   <?php require("../../model/adminCitas/adminCitasEstado.php"); ?>
 
+  <nav class="navbar navbar-expand-lg navbar-dark text-light bg-dark px-2">
+        <a class="linkSalir" href="admin_page.php">Pacientes (<?php echo $pt ?>)</a>
+        <!-- Esto es un boton de más contenido para cuando la pantalla sea más pequeña -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="admin_page.php">Pacientes (<?php echo $pt ?>)</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <!-- Lista de Botones -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav pum">
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="admin_citas.php">Revisar Citas Por Confirmar (<?php echo $conta ?>) </a>
-        </li>
+                <li class="nav-item active">
+                    <a class="linkCitasPend" href="admin_citas.php">Revisar Citas Por Confirmar (<?php echo $conta ?>)</a>
+                </li>
 
-        <li class="nav-item active">
-          <a class="nav-link" href="admin_citasaprov.php">Revisar Citas Confirmadas (<?php echo $conta2 ?>) </a>
-        </li>
+                <li class="nav-item active">
+                    <a class="linkCitasPend" href="admin_citasaprov.php">Revisar Citas Confirmadas (<?php echo $conta2 ?>) </a>
+                </li>
 
-        <li class="nav-item active">
-          <a class="nav-link" href="admin_citaspos.php">Revisar Citas Pospuestas (<?php echo $conta3 ?>) </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="m.php">Conciliar Citas</a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="../../controller/salir.php">Salir</a>
-        </li>
-
-      </ul>
-    </div>
+                <li class="nav-item active">
+                    <a class="linkCitasPend" href="admin_citaspos.php">Revisar Citas Pospuestas (<?php echo $conta3 ?>) </a>
+                </li>
 
 
+                <li class="nav-item">
+                    <a class="linkCitasPend" href="m.php">Conciliar Citas</a>
+                </li>
+            </ul>
+        </div>
+        <a class="navbar-brand linkEdit" href="../../controller/salir.php"><img src="../../assets/img/box-arrow-right.svg"></a>
+    </nav>
 
-  </nav>
 
-  <h1 class="text-center">Bienvenido Administrador</h1>
+
+  
+
+  <h1 class="text-center" style="color: white;">Bienvenido Administrador</h1>
 
 
 

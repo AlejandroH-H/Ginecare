@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test 2.0</title>
-
+    <link rel="stylesheet" href="../../assets/css/admin2.css">
+    <link rel="stylesheet" href="../../assets/css/decoration.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/ca9fa9751b.js" crossorigin="anonymous"></script>
@@ -19,14 +20,26 @@
     include("../../controller/session_a.php");
     ?>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="admin_page.php">Volver a la página principal</a>
+<nav class="navbar navbar-expand-lg navbar-dark text-light bg-dark px-2">
+        <a class="linkHistorial" href="admin_page.php">Regresar</a>
+        <!-- Esto es un boton de más contenido para cuando la pantalla sea más pequeña -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Lista de Botones -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav pum">
+
+                <li class="nav-item active">
+                    <a class="linkSalir" href="Pacientes_blocked.php">Bloquear Pacientes</a>
+                </li>
 
 
+            </ul>
+        </div>
+        <a class="navbar-brand linkEdit" href="../../controller/salir.php"><img src="../../assets/img/box-arrow-right.svg"></a>
     </nav>
 
 
@@ -59,12 +72,7 @@
 
         <div id="datos_buscador" class="col-8 p-4"></div>
 
-        <div class="card col-12 mt-5">
-            <div class="card-body">
-                <div id="datos_buscador2" class="container pl-5 pr-5"></div>
-            </div>
-        </div>
-
+       
 
 
         <script type="text/javascript">

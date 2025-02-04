@@ -14,7 +14,8 @@ $mes = date('m');
     $year = date('Y');
     $fechaActual = date('Y-m-d');
 
-    if($fecha<=$fechaActual){
+    $holiday = date('l', strtotime($fecha));
+    if($fecha<=$fechaActual or $holiday=='Sunday'){
      echo '<div class="alert alert-warning">¡Fecha inválida!</div>';
      exit;
 
@@ -27,7 +28,7 @@ if ($estado == 'pospuesta'){
     $stmt->bindParam(':fecha_hora', $fecha_hora);
     $stmt->execute();
     $count=$stmt->fetchColumn();
-
+   
     if($count>0){
         echo '<div class="alert alert-warning">¡La nueva fecha y hora ya están ocupadas. Elija otra!</div>';
         exit;

@@ -15,7 +15,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col" class="bg-info">Empleado</th>
+                    <th scope="col" class="bg-info">Paciente</th>
                     <th scope="col" class="bg-info">DNI</th>
                     <th scope="col" class="bg-info">Generar Historial</th>
                 </tr>

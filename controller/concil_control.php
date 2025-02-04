@@ -47,25 +47,26 @@ $num = count($citas);
         <table class="table margin-center">
             <thead> 
                 <tr>
-                <th scope="col" class="bg-danger .bg-gradient">Empleado</th>
-                <th scope="col" class="bg-danger .bg-gradient">DNI</th>
-                <th scope="col" class="bg-danger .bg-gradient">Motivo</th>
-                <th scope="col" class="bg-danger .bg-gradient">Fecha</th>
-                <th scope="col" class="bg-danger .bg-gradient">Hora</th>
-                <th scope="col" class="bg-danger .bg-gradient">Estado</th>
+                <th scope="col" class="columnas columTitulo">Paciente</th>
+                <th scope="col" class="columnas columTitulo">DNI</th>
+                <th scope="col" class="columnas columTitulo">Motivo</th>
+                <th scope="col" class="columnas columTitulo">Fecha</th>
+                <th scope="col" class="columnas columTitulo">Hora</th>
+                <th scope="col" class="columnas columTitulo">Estado</th>
+                <th scope="col" class="columnas columTitulo">Observación</th>
                 </tr>
             </thead>
             <tbody>
 <?php foreach ($citas as $cita):
     if($buscar!="" OR $buscar1!="" OR $buscar2!="" OR $buscar3!="" OR $buscar4!=""){ ?>
 <tr>
-                        <td><?php echo $cita['nombre'] ?> - <?php echo $cita['apellido'] ?></td>
-                        <td><?php echo $cita['dni'] ?></td>
-                        <td><?php echo $cita['motivo'] ?></td>
-                        <td><?php echo $cita['fecha'] ?></td>
-                        <td><?php echo $cita['hora'] ?></td>
-                        <td><?php echo $cita['estado'] ?></td>
-                        <td><?php echo $cita['observacion'] ?></td>
+                        <td class="bg-dark text-white"><?php echo $cita['nombre'] ?> - <?php echo $cita['apellido'] ?></td>
+                        <td class="bg-dark text-white"><?php echo $cita['dni'] ?></td>
+                        <td class="bg-dark text-white"><?php echo $cita['motivo'] ?></td>
+                        <td class="bg-dark text-white"><?php echo $cita['fecha'] ?></td>
+                        <td class="bg-dark text-white"><?php echo $cita['hora'] ?></td>
+                        <td class="bg-dark text-white"><?php echo $cita['estado'] ?></td>
+                        <td class="bg-dark text-white"><?php echo $cita['observacion'] ?></td>
 
                     </tr>
 

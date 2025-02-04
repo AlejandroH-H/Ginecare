@@ -1,0 +1,34 @@
+#a{
+    margin-left: 50%;
+}
+
+
+#text{
+    margin-left: 20%;
+}
+
+#navbarNav{
+    margin-left: 30%;
+}
+
+
+
+.columnasg{
+    text-align: center;
+    border: 2px solid black;
+    background-color: #4c090b;
+    color: white;
+  }
+  
+  .columnasg.columTitulog{
+    background-color: #873632;
+    font-weight: bold;
+    color: white;
+  }
+
+  .columnasg.columTitulog1{
+    text-align: center;
+    border: 2px solid black;
+    background-color: #4c090b;
+    color: white;
+  }

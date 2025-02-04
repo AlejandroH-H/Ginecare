@@ -32,7 +32,7 @@ if(!empty($_POST["registro"])){
         echo '<div class="alert alert-warning">¡Fecha inválida!</div>';
         
     } else{
-        $stmt = $pdo->prepare('SELECT * FROM empleados WHERE nombre = :nombre AND dni = :dni');
+        $stmt = $pdo->prepare('SELECT * FROM empleados WHERE usuario = :nombre AND dni = :dni');
     $stmt->bindParam(':nombre', $usuario);
     $stmt->bindParam(':dni', $dni);
     $stmt->execute();

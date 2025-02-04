@@ -6,17 +6,26 @@
     <title>Calendario de Citas</title>
 
     <style>
+        .container{
+          background-color: #1b1b1b;
+          text-align: center;
+          border-radius: 15px;
+        }
+        
         .disponible{
-            background-color: green;
+            background-color:rgb(21, 106, 155);
             color: white;
+            border-radius: 10px;
         }
         .ocupado{
-            background-color: red;
-            color: white;
+            background-color: rgb(136, 17, 17);
+            color: white;          
+            border-radius: 10px;
         }
         .no-disponible{
             background-color: gray;
             color: white;
+            border-radius: 10px;
         }
         .calendario{
             display: grid;
@@ -31,6 +40,17 @@
         .horario{
             margin: 5px 0;
         }
+        .dias{
+          display: flex;
+          flex-direction: row;
+          gap: 50px;
+          justify-content: center;
+          background-color: #1b1b1b;
+          color: white;
+        }
+        .titulo{
+          color: white;
+        }
     </style>
 
 </head>
@@ -41,11 +61,10 @@
 include("../../conexion.php");
 date_default_timezone_set('America/Caracas');
 
-$id = $_GET['id'];
 $mesn = isset($_GET['mesn']) ? $_GET['mesn'] : date('m');
 $yearn = isset($_GET['yearn']) ? $_GET['yearn'] : date('Y');
 
-
+$id=$_GET['id'];
 $mes = date('m');
 $year = date('Y');
 $mesMax = date('m', strtotime('+3 months'));
@@ -119,7 +138,17 @@ foreach($citas as $cita){
     
 }
 
-echo "<h1>CALENDARIO DE CITAS $test1</h1>";
+echo "<h3 class='titulo'>CALENDARIO DE CITAS $test1</h3>";
+echo" 
+<div class='dias'>
+<h2>sabado</h2>
+<h2>domingo</h2>
+<h2>lunes</h2>
+<h2>martes</h2>
+<h2>miercoles</h2>
+<h2>jueves</h2>
+<h2>viernes</h2>
+</div>";
        echo "<div id='calendario' class='calendario'>";
 
 $diasEnMes = date('t', strtotime($primerDia));
@@ -130,29 +159,29 @@ for($dia = 1; $dia <= $diasEnMes; $dia++){
 
     switch ($test) {
         case "Sunday":
-            $test = "Domingo";
+            $test = false;
         break;
         case "Monday":
-            $test = "Lunes";
+            $test = " ";
           break;
         case "Tuesday":
-            $test = "Martes";
+            $test = " ";
           break;
         case "Wednesday":
-            $test = "Miercoles";
+            $test = " ";
          break;
          case "Thursday":
-            $test = "Jueves";
+            $test = " ";
          break;
          case "Friday":
-            $test = "Viernes";
+            $test = " ";
             break;
         default:
-        $test = "Sabado";
+        $test = " ";
       }
 
     $estado = 'disponible';
-    if($fecha<=$fechaActual OR $test == "Domingo" ){
+    if($fecha<=$fechaActual OR $test == false ){
         $estado = 'no-disponible';
     } elseif(isset($citasPorFecha[$fecha])){
         $estadoMañana = isset($citasPorFecha[$fecha]) && $citasPorFecha[$fecha]['mañana'] ? 'ocupado' : 'disponible';
@@ -165,13 +194,11 @@ for($dia = 1; $dia <= $diasEnMes; $dia++){
     
     echo "<div class='dia $estado'>";
 
-    echo "<div>$dia $test</div>";
+    echo "<div>$dia </div>";
 
     if($estado !=='no-disponible'){
         echo "<div class='horario $estadoMañana'>Mañana</div>";
-
         echo "<div class='horario $estadoTarde'>Tarde</div>";
-
     }
 
    
@@ -189,7 +216,7 @@ for($dia = 1; $dia <= $diasEnMes; $dia++){
                 $mesAnterior = 12;
                 $lastyear--;
             }
-            echo "<a href='admin_citas1.php?mesn=0$mesAnterior&yearn=$lastyear' class='btn btn-primary'>Mes Anterior</a>";
+            echo "<a href='admin_citas1.php?id=$id&mesn=0$mesAnterior&yearn=$lastyear' class='btn btn-primary'>Mes Anterior</a>";
         }
         if($yearn < $yearMax OR ($yearn == $yearMax AND $mesn < $mesMax)){
             $mesSiguiente = $mesn + 1;

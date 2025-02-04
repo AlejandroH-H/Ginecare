@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcar Citas</title>
+    <title>Conciliar Citas</title>
+    <link rel="stylesheet" href="../../assets/css/admin.css">
+  <link rel="stylesheet" href="../../assets/css/decoration.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/ca9fa9751b.js" crossorigin="anonymous"></script>
 
@@ -15,43 +17,51 @@
     <?php include("../../controller/session_a.php"); ?>
     <?php require("../../model/mConsulta.php"); ?>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="inicio_admin.php">Regresar</a>
+    <nav class="navbar navbar-expand-lg navbar-dark text-light bg-dark px-2">
+        <a class="linkHistorial" href="inicio_admin.php">Regresar</a>
+        <!-- Esto es un boton de más contenido para cuando la pantalla sea más pequeña -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <!-- Lista de Botones -->
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav pum">
+
                 <li class="nav-item active">
-                    <a class="nav-link" href="m1.php">Citas Realizadas (<?php echo $conta ?>) </a>
+                    <a class="linkCitasPend" href="m1.php">Citas Realizadas (<?php echo $conta ?>)</a>
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="m0.php">Citas Que No Se Cumplieron (<?php echo $conta2 ?>) </a>
+                    <a class="linkCitasPend" href="m0.php">Citas Que No Se Cumplieron (<?php echo $conta2 ?>)</a>
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="concillook.php">Buscar cita</a>
+                    <a class="linkSalir" href="concillook.php">Buscar cita conciliada</a>
                 </li>
 
+
+            </ul>
         </div>
-
-
-
+        <a class="navbar-brand linkEdit" href="../../controller/salir.php"><img src="../../assets/img/box-arrow-right.svg"></a>
     </nav>
 
-    <div class="container">
+   
+
+    <div id="datos">
         <h1>Conciliar Citas Realizadas</h1>
-        <table class="table table-bordered">
+        <table class="tabla">
             <thead>
                 <tr>
-                    <th>Paciente</th>
-                    <th>Doctor</th>
-                    <th>Fecha</th>
-                    <th>Motivo</th>
-                    <th>Estado</th>
-                    <th>Realizada</th>
-                    <th>Acciones</th>
+                    <th class="columnas columTitulo">Paciente</th>
+                    <th class="columnas columTitulo">DNI</th>
+                    <th class="columnas columTitulo">Doctor</th>
+                    <th class="columnas columTitulo">Fecha</th>
+                    <th class="columnas columTitulo">Motivo</th>
+                    <th class="columnas columTitulo">Estado</th>
+                    <th class="columnas columTitulo">Realizada</th>
+                    <th class="columnas columTitulo">Acciones</th>
                 </tr>
             </thead>
 

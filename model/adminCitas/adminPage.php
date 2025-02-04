@@ -17,29 +17,29 @@ foreach ($resultado as $datos):
   $conta4 = $stmtl->rowCount();
 ?>
   <tr>
-    <td class="bg-secondary .bg-gradient text-white"><?php echo $datos['id'] ?></td>
-    <td class="bg-dark text-white"><?php echo $datos['nombre'] ?></td>
-    <td class="bg-dark text-white"><?php echo $datos['apellido'] ?></td>
-    <td class="bg-dark text-white"><?php echo $datos['dni'] ?></td>
-    <td class="bg-dark text-white">
+    <td class="columnas"><?php echo $datos['id'] ?></td>
+    <td class="columnas"><?php echo $datos['nombre'] ?></td>
+    <td class="columnas"><?php echo $datos['apellido'] ?></td>
+    <td class="columnas"><?php echo $datos['dni'] ?></td>
+    <td class="columnas">
       <a href="modificar_datos.php?id=<?= $datos['id'] //mandamos el id 
                                       ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
     </td>
-    <td class="bg-dark text-white"><a onclick="return eliminar()" href="admin_page.php?id=<?= $datos['id'] //mandamos el id?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+    <td class="columnas"><a onclick="return eliminar()" href="admin_page.php?id=<?= $datos['id'] //mandamos el id?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
     </td>
-    <td class="bg-dark text-white"><a onclick="return bloquear()" href="admin_page.php?userid=<?= $datos['id'] //mandamos el id?>" class="btn btn-small btn-secondary"><i class="fa-solid fa-shield-halved"></i></a>
+    <td class="columnas"><a onclick="return bloquear()" href="admin_page.php?userid=<?= $datos['id'] //mandamos el id?>" class="btn btn-small btn-secondary"><i class="fa-solid fa-shield-halved"></i></a>
     </td>
-    <td class="bg-dark text-white"><a href="admin_historial.php?id=<?= $datos['id'] //mandamos el id 
+    <td class="columnas"><a href="admin_historial.php?id=<?= $datos['id'] //mandamos el id 
                                                                     ?>" class="btn btn-small btn-info"><i class="fa-solid fa-pen-to-square"></i></a>
     </td>
-    <td class="bg-dark text-white"><a href="gh1.php?id=<?= $datos['id'] //mandamos el id 
+    <td class="columnas"><a href="gh1.php?id=<?= $datos['id'] //mandamos el id 
                                                         ?>" class="btn btn-small btn-secondary"> <i class="fa-regular fa-clipboard"></i></a>
     </td>
-    <td class="bg-dark text-white">
+    <td class="columnas">
       <a href="chat.php?receiver_id=<?= $datos['id'] //mandamos el id 
                                     ?>" class="btn btn-small btn-secondary"> <i class="fa-regular fa-clipboard"></i></a>
     </td>
-    <td class="bg-dark text-white"><?php echo $conta4 ?></td>
+    <td class="columnas"><?php echo $conta4 ?></td>
 
   </tr>
 <?php

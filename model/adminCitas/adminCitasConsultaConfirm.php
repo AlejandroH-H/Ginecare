@@ -9,13 +9,13 @@ $citas = $stmt->fetchAll();
 foreach ($citas as $cita):
 ?>
   <tr>
-    <td><?php echo $cita['nombre'] ?> - <?php echo $cita['apellido'] ?></td>
-    <td><?php echo $cita['dni'] ?></td>
-    <td><?php echo $cita['motivo'] ?></td>
-    <td><?php echo $cita['fecha'] ?></td>
-    <td><?php echo $cita['hora'] ?></td>
-    <td><?php echo $cita['estado'] ?></td>
-    <td>
+    <td class="columnas"><?php echo $cita['nombre'] ?> - <?php echo $cita['apellido'] ?></td>
+    <td class="columnas"><?php echo $cita['dni'] ?></td>
+    <td class="columnas"><?php echo $cita['motivo'] ?></td>
+    <td class="columnas"><?php echo $cita['fecha'] ?></td>
+    <td class="columnas"><?php echo $cita['hora'] ?></td>
+    <td class="columnas"><?php echo $cita['estado'] ?></td>
+    <td class="columnas">
       <form action="" method="post" style="display:inline;">
 
 
@@ -30,7 +30,7 @@ foreach ($citas as $cita):
       </form>
     </td>
 
-    <td><a href="admin_citas1.php?id=<?= $cita['id'] //mandamos el id 
+    <td class="columnas"><a href="admin_citas1.php?id=<?= $cita['id'] //mandamos el id 
                                       ?>" class="btn btn-small btn-secondary"> <i class="fa-regular fa-clipboard"></i></a>
     </td>
   </tr>

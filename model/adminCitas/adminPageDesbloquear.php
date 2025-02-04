@@ -11,11 +11,10 @@ foreach ($resultado as $datos):
   
 ?>
   <tr>
-    <td class="bg-secondary .bg-gradient text-white"><?php echo $datos['id'] ?></td>
-    <td class="bg-dark text-white"><?php echo $datos['nombre'] ?></td>
-    <td class="bg-dark text-white"><?php echo $datos['apellido'] ?></td>
-    <td class="bg-dark text-white"><?php echo $datos['dni'] ?></td>
-    <td class="bg-dark text-white">
+    <td class="columnas"><?php echo $datos['id'] ?></td>
+    <td class="columnas"><?php echo $datos['nombre'] ?></td>
+    <td class="columnas"><?php echo $datos['apellido'] ?></td>
+    <td class="columnas"><?php echo $datos['dni'] ?></td>
       
     <td class="bg-dark text-white"><a onclick="return desbloquear()" href="Pacientes_blocked.php?desbid=<?= $datos['id'] //mandamos el id?>" class="btn btn-small btn-secondary"><i class="fa-solid fa-shield-halved"></i></a>
     </td>

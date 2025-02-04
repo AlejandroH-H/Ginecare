@@ -34,15 +34,14 @@ $num = count($resultado);
         <table class="table margin-center">
             <thead>
                 <tr>
-                <th scope="col" class="bg-danger .bg-gradient" >ID</th>
-                <th scope="col" class="bg-danger .bg-gradient">NOMBRES</th>
-                <th scope="col" class="bg-danger .bg-gradient">APELLIDOS</th>
-                <th scope="col" class="bg-danger .bg-gradient">DNI</th>
-                <th scope="col" class="bg-danger .bg-gradient">Editar Datos</th>
-                <th scope="col" class="bg-danger .bg-gradient">Borrar Paciente</th>
-                <th scope="col" class="bg-danger .bg-gradient">Historial Diagnostico</th>
-                <th scope="col" class="bg-danger .bg-gradient">Chat</th>
-                <th scope="col" class="bg-danger .bg-gradient"></th>
+                <th scope="col" class="columnas columTitulo" >ID</th>
+                <th scope="col" class="columnas columTitulo">NOMBRES</th>
+                <th scope="col" class="columnas columTitulo">APELLIDOS</th>
+                <th scope="col" class="columnas columTitulo">DNI</th>
+                <th scope="col" class="columnas columTitulo">Editar Datos</th>
+                <th scope="col" class="columnas columTitulo">Borrar Paciente</th>
+                <th scope="col" class="columnas columTitulo">Historial Diagnostico</th>
+                <th scope="col" class="columnas columTitulo">Chat</th>
                 </tr>
             </thead>
             <tbody>

@@ -2,7 +2,7 @@
 //$conn = mysqli_connect("localhost", "root", "", "studio");
  $host = "localhost";
  $user = "root";
- $password = "password";
+ $password = "";
  $baseDatos = "studio";
 
  $dsn = 'mysql:host=' . $host . ';dbname=' . $baseDatos;
