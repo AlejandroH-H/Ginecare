@@ -5,7 +5,7 @@ if(!empty($_POST["registro"])){
     if(empty($_POST['descripcion']) ) {
         echo '<div class="alert alert-warning">¡Por favor, actualice el historial con información!</div>';
 } else{
-    $id = $_POST['id'];
+    $id = $_GET['id1'];
     $descripcion = $_POST['descripcion'];
 
 

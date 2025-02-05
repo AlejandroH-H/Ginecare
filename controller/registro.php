@@ -15,7 +15,7 @@ if(!empty($_POST["registro"])){
     $email = filter_var($_POST['email'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $phone = filter_var($_POST['phone'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $password = trim(filter_var($_POST['password'],FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-
+    $restrin = 0;
     $hashe = password_hash($password, PASSWORD_DEFAULT);
 
     if(!$nombre || !$apellido || !$dni || !$password || !$usuario || !$date || !$email || !$phone){
@@ -36,8 +36,8 @@ if(!empty($_POST["registro"])){
     if($result > 0){
         echo '<div class="bad">¡Error, DNI ya existente!</div>';
     }else{
-        $stmt = $pdo->prepare("INSERT INTO empleados ( nombre, apellido, usuario, nacimiento, email, dni, phone, password) 
-        VALUES (:nombre, :apellido, :usuario, :nacimiento, :email, :dni, :phone, :hash)");
+        $stmt = $pdo->prepare("INSERT INTO empleados ( nombre, apellido, usuario, nacimiento, email, dni, phone, restringido, password) 
+        VALUES (:nombre, :apellido, :usuario, :nacimiento, :email, :dni, :phone, :restrin, :hash)");
         $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
         $stmt->bindParam(':apellido',  $apellido, PDO::PARAM_STR);
         $stmt->bindParam(':usuario', $usuario, PDO::PARAM_STR);
@@ -45,6 +45,7 @@ if(!empty($_POST["registro"])){
         $stmt->bindParam(':email',  $email, PDO::PARAM_STR);
         $stmt->bindParam(':dni',  $dni, PDO::PARAM_STR);
         $stmt->bindParam(':phone',  $phone, PDO::PARAM_STR);
+        $stmt->bindParam(':restrin',  $restrin, PDO::PARAM_INT);
         $stmt->bindParam(':hash',  $hashe);
 
         if($stmt->execute()){

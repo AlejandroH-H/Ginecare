@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="input-field">
-                    <input type="text" name="password" required minlength="6" maxlength="20">
+                    <input type="password" name="password" required minlength="6" maxlength="20">
                     <label for="">Contraseña</label>
                 </div>
 

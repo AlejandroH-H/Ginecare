@@ -17,8 +17,9 @@
 
   <?php require("../../model/adminCitas/adminCitasEstado.php"); ?>
 
-  <nav class="navbar navbar-expand-lg navbar-dark text-light bg-dark px-2">
+  <nav class="navbar navbar-expand-lg navbar-dark text-light bg-dark px-2 pum">
         <a class="linkHistorial" href="inicio_admin.php">Regresar</a>
+        <h5>Citas Pospuestas</h5>
         <!-- Esto es un boton de más contenido para cuando la pantalla sea más pequeña -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-expanded="false" aria-label="Toggle navigation">
