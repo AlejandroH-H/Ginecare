@@ -34,7 +34,7 @@
                <label>DNI</label>
             </div>
             <div class="field">
-               <input type="text" name="password" required>
+               <input type="password" name="password" required>
                <label>Contraseña</label>
             </div>
             <Input class="login" name="ingresar" type="submit" value="LOGIN">

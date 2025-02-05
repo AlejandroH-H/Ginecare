@@ -68,6 +68,7 @@
             <th scope="col" class="columnas columTitulo">NOMBRES</th>
             <th scope="col" class="columnas columTitulo">APELLIDOS</th>
             <th scope="col" class="columnas columTitulo">DNI</th>
+            <th scope="col" class="columnas columTitulo">DETALLES DEL PACIENTE</th>
             <th scope="col" class="columnas columTitulo">Editar Datos</th>
             <th scope="col" class="columnas columTitulo">Borrar Paciente</th>
             <th scope="col" class="columnas columTitulo">Bloquear Paciente</th>

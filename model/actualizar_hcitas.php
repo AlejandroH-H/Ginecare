@@ -15,8 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "<script type= 'text/javascript'>
                 var result = confirm('¿Desea hacerle una observacion a la cita sin realizar?');
                 if(result){
-                    window.location.href='http://localhost/salary%20-%20copia/Views/admin/observacion.php?h=$id&userid=$userid';
-                } else{window.location.href='http://localhost/salary%20-%20copia/Views/admin/m0.php';}
+                    window.location.href='../admin/observacion.php?h=$id&userid=$userid';
+                } else{window.location.href='../admin/m0.php';}
                 </script>";
 
             //header("location: observacion.php?h=$id");

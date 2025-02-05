@@ -21,6 +21,8 @@ foreach ($resultado as $datos):
     <td class="columnas"><?php echo $datos['nombre'] ?></td>
     <td class="columnas"><?php echo $datos['apellido'] ?></td>
     <td class="columnas"><?php echo $datos['dni'] ?></td>
+    <td class="columnas"> <a href="descripcion.php?id=<?= $datos['id'] //mandamos el id 
+                                      ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a></td>
     <td class="columnas">
       <a href="modificar_datos.php?id=<?= $datos['id'] //mandamos el id 
                                       ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
