@@ -9,15 +9,16 @@
   <link rel="stylesheet" href="../../assets/css/profile.css">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  
+
   <title>Perfil</title>
 </head>
 
 <body>
-  <?php include("../../controller/session_l.php");?>
-  <?php require("../../model/deleteProfile.php");?>
-  <?php 
-  function edades($nacimiento){
+  <?php include("../../controller/session_l.php"); ?>
+  <?php require("../../model/deleteProfile.php"); ?>
+  <?php
+  function edades($nacimiento)
+  {
     $fechaNacimiento = new DateTime($nacimiento);
     $fechaActual = new DateTime();
     $diferencia = $fechaActual->diff($fechaNacimiento);
@@ -43,12 +44,13 @@
               <div class="col-sm-4 bg-c-lite-green user-profile">
                 <div class="card-block text-center text-white">
                   <div class="m-b-25">
+
                   <?php 
                   include("../../model/cargarImagenPerfil.php");
                         ?>
                   </div>
-                  <h6 class="f-w-600"><?php echo $usuario?></h6>
-                  <p><?php echo $dni?></p>
+                  <h6 class="f-w-600"><?php echo $usuario ?></h6>
+                  <p><?php echo $dni ?></p>
                   <a class="linkEdit" href="editar.php?id=<?php echo $sid ?>">Editar</a>
                   <a class="linkEdit" href="perfil.php?id=<?php echo $sid ?>">Borrar</a>
                   <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
@@ -56,11 +58,11 @@
               </div>
               <div class="col-sm-8">
                 <div class="card-block">
-                  <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Información de <?php echo $name?></h6>
+                  <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Información de <?php echo $name ?></h6>
                   <div class="row">
                     <div class="col-sm-6">
                       <p class="m-b-10 f-w-600">Email</p>
-                      <h6 class="text-muted f-w-400"><?php echo $email?></h6>
+                      <h6 class="text-muted f-w-400"><?php echo $email ?></h6>
                     </div>
                     <div class="col-sm-6">
                       <p class="m-b-10 f-w-600">Phone</p>
@@ -75,13 +77,15 @@
                     </div>
                     <div class="col-sm-6">
                       <p class="m-b-10 f-w-600">Edad</p>
-                      <h6 class="text-muted f-w-400"><?php echo edades($nacimiento)?></h6>
+                      <h6 class="text-muted f-w-400"><?php echo edades($nacimiento) ?></h6>
                     </div>
+                    <br>
+                    <hr>
                     <div class="col-sm-6">
-                      <p class="m-b-10 f-w-600">foto de perfil</p>
-                      <form action="../../model/imagenPerfil.php" method="post" enctype="multipart/form-data" >
-                      <input type="file" id="fotoPerfil" name="fotoPerfil" class="botones imageninput">
-                      <input type="submit" value="Subir Imagen" class="botones">
+                      <p class="m-b-10 f-w-600">Foto de Perfil</p>
+                      <form action="../../model/imagenPerfil.php" method="post" enctype="multipart/form-data">
+                        <input type="file" id="fotoPerfil" name="fotoPerfil" class="botones imageninput">
+                        <input type="submit" value="Subir Imagen" class="botones">
                       </form>
                     </div>
                   </div>
@@ -93,22 +97,22 @@
       </div>
     </div>
   </div>
-  
+
   <div class="contenedor">
-  <div class="opciones">
-  <h2>detalles:</h2>
-  <h4>en caso de tener algun tipo de enfermedad cronica o alergia por favor ingresarlo en el siguiente formulario:</h4>
-  <?php
-    if (isset($_GET['mensaje'])) {
+    <div class="opciones">
+      <h2>Alergias Previas:</h2>
+      <h4>En caso de tener algún tipo de <b>Enfermedad</b> Crónica o Alergias. Por favor, puede ingresarlos en el siguiente formulario:</h4>
+      <?php
+      if (isset($_GET['mensaje'])) {
         echo '<p class="mensajeConfimacion">' . htmlspecialchars($_GET['mensaje']) . '</p>';
-    }
-    ?>
-  <form action="../../model/detalleUser.php" method="post">
-  <textarea class="texto" name="detalles" id="detalles"  rows="4" cols="50" required></textarea>
-  <br>
-  <input type="submit" value="subir" class="botonDeTextarea" >
-  </form>
-  </div>
+      }
+      ?>
+      <form action="../../model/detalleUser.php" method="post">
+        <textarea class="texto" name="detalles" id="detalles" rows="4" cols="50" required></textarea>
+        <br>
+        <input type="submit" value="subir" class="botonDeTextarea">
+      </form>
+    </div>
   </div>
 
 </body>
