@@ -11,19 +11,19 @@ $stmt->execute();
 $citas = $stmt->fetchAll();
 foreach ($citas as $cita) {
   echo "<tr>";
-  echo "<td>" . htmlspecialchars($cita['paciente']) .  htmlspecialchars($cita['apellido']) . "</td>";
+  echo "<td  class='columnas'>" . htmlspecialchars($cita['paciente']) .  htmlspecialchars($cita['apellido']) . "</td>";
 
-  echo "<td>" . htmlspecialchars($cita['dni']) . "</td>";
+  echo "<td   class='columnas'>" . htmlspecialchars($cita['dni']) . "</td>";
 
-  echo "<td>" . htmlspecialchars($cita['doctor']) . "</td>";
+  echo "<td  class='columnas'>" . htmlspecialchars($cita['doctor']) . "</td>";
 
-  echo "<td>" . htmlspecialchars($cita['fecha']) . "</td>";
+  echo "<td   class='columnas'>" . htmlspecialchars($cita['fecha']) . "</td>";
 
-  echo "<td>" . htmlspecialchars($cita['motivo']) . "</td>";
+  echo "<td  class='columnas'>" . htmlspecialchars($cita['motivo']) . "</td>";
 
-  echo "<td>" . htmlspecialchars($cita['estado']) . "</td>";
+  echo "<td  class='columnas'>" . htmlspecialchars($cita['estado']) . "</td>";
 
-  echo "<td>" . ($cita['realizada'] ? 'Sí' : 'No') . "</td>";
+  echo "<td  class='columnas'>" . ($cita['realizada'] ? 'Sí' : 'No') . "</td>";
 
   echo "</tr>";
 }
