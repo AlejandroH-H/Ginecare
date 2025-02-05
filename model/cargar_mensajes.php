@@ -24,6 +24,14 @@ if (isset($_GET['receiver_id'])) {
     $stmtl->bindParam(':receiver_id', $receiver_id);
     $stmtl->execute();
 
+    $stmtle = $pdo->prepare('SELECT leido FROM  messages WHERE (sender_id = :sender_id 
+    AND receiver_id = :receiver_id  )');
+
+    $stmtle->bindParam(':sender_id', $sender_id);
+    $stmtle->bindParam(':receiver_id', $receiver_id);
+    $stmtle->execute();
+    $read = $stmtle->fetchColumn();
+
     $stmtn = $pdo->prepare('SELECT e.nombre FROM messages m JOIN empleados e ON (m.receiver_id=e.id) 
 WHERE receiver_id = :receiver_id');
 
@@ -41,8 +49,11 @@ WHERE receiver_id = :receiver_id');
     $cname =  $name . " "  . $surname;
 
     foreach ($mensajes as $mensaje) {
+        $class = $mensaje['sender_id'] == $sender_id ? 'sender' : 'receiver';
         $nombre = $mensaje['sender_id'] == $sender_id ? 'Tú' : 'Paciente ' . $cname;
-        echo "<div><strong>" . htmlspecialchars($nombre) . ": </strong> " .
-            htmlspecialchars($mensaje['mensajitos']) . "</div>";
+        echo "<div class='$class'><strong>" . htmlspecialchars($nombre) . ": </strong> " .
+            htmlspecialchars($mensaje['mensajitos']) . "</div> <br> <div class='$class'>Enviado: " . htmlspecialchars($mensaje['fecha']) . "</div> <br> ";
+          
+
     }
 }

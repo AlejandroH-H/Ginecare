@@ -25,8 +25,10 @@ AND receiver_id = :sender_id  ) AND leido = 0');
     $mensajes = $stmt->fetchAll();
 
     foreach ($mensajes as $mensaje) {
+        $class = $mensaje['sender_id'] == $sender_id ? 'sender' : 'receiver';
         $nombre = $mensaje['sender_id'] == $sender_id ? 'Tú' : 'Dra. Farfán';
-        echo "<div><strong>" . htmlspecialchars($nombre) . ": </strong> " .
-            htmlspecialchars($mensaje['mensajitos']) . "</div>";
+        echo "<div class='$class'><strong>" . htmlspecialchars($nombre) . ": </strong> " .
+            htmlspecialchars($mensaje['mensajitos']) . "</div> </div> <br> <div class='$class'>Enviado: " . htmlspecialchars($mensaje['fecha']) . "</div> <br>";
+        
     }
 }

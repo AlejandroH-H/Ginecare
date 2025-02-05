@@ -1,0 +1,25 @@
+.container{
+    background-color: #547566;
+}
+
+.sender{
+    text-align: right;
+    background-color: #DCF8C6;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+    float: right;
+    clear: both;
+}
+
+.receiver{
+    text-align: left;
+    background-color: #08e77f;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+    float: left;
+    clear: both;
+}
