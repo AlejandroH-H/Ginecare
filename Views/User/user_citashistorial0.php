@@ -40,16 +40,16 @@
 
     <div class="container">
         <h1>Citas No Realizadas</h1>
-        <table class="table table-bordered">
+        <table class=" ">
             <thead>
                 <tr>
-                    <th>Paciente</th>
-                    <th>DNI</th>
-                    <th>Doctor</th>
-                    <th>Fecha</th>
-                    <th>Motivo</th>
-                    <th>Estado</th>
-                    <th>Realizada</th>
+                    <th scope="col" class="columnas columTitulo">Paciente</th>
+                    <th scope="col" class="columnas columTitulo">DNI</th>
+                    <th scope="col" class="columnas columTitulo">Doctor</th>
+                    <th scope="col" class="columnas columTitulo">Fecha</th>
+                    <th scope="col" class="columnas columTitulo">Motivo</th>
+                    <th scope="col" class="columnas columTitulo">Estado</th>
+                    <th scope="col" class="columnas columTitulo">Realizada</th>
                 </tr>
             </thead>
 

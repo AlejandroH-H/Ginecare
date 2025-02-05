@@ -71,7 +71,7 @@ h2 {
   border: none;
   outline: none;
   font-size: 16px;
-  color: #fff;
+  color: #000000;
 }
 
 .field input:focus ~ label,
